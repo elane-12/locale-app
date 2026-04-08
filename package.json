@@ -1,0 +1,10 @@
+{
+  "name": "locale-app",
+  "version": "1.0.0",
+  "description": "Locale — Social discovery app for hotels, restaurants & things to do",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Static site, no build needed'"
+  },
+  "dependencies": {}
+}
