@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-:root{--brand:#0F0E1A;--gold:#E8A838;--coral:#FF6B6B;--surface:#FAFAF8;--surface2:#F3F1EC;--white:#FFFFFF;--text:#0F0E1A;--text2:#5C5A70;--text3:#9B99AC;--border:rgba(15,14,26,0.1);--border2:rgba(15,14,26,0.2);--open:#2A7A50;--busy:#B85C00;--font-d:'Syne',sans-serif;--font-b:'DM Sans',sans-serif;--r:16px;}
+:root{--brand:#0F0E1A;--gold:#E8A838;--coral:#FF6B6B;--surface:#FAFAF8;--surface2:#F3F1EC;--white:#FFFFFF;--text:#0F0E1A;--text2:#5C5A70;--text3:#9B99AC;--border:rgba(15,14,26,0.1);--border2:rgba(15,14,26,0.2);--open:#2A7A50;--busy:#B85C00;--font-d:"Syne",sans-serif;--font-b:"DM Sans",sans-serif;--r:16px;}
 html,body{height:100%;overscroll-behavior:none;}
 body{font-family:var(--font-b);background:var(--surface2);display:flex;align-items:flex-start;justify-content:center;}
 .app{width:100%;max-width:430px;height:100vh;background:var(--surface);display:flex;flex-direction:column;overflow:hidden;}
@@ -23,7 +23,7 @@ body{font-family:var(--font-b);background:var(--surface2);display:flex;align-ite
 .city-overlay{position:fixed;inset:0;background:rgba(15,14,26,0.6);z-index:200;display:none;align-items:flex-end;justify-content:center;}
 .city-overlay.open{display:flex;}
 @media(min-width:500px){.city-overlay{align-items:center;}}
-.city-modal{width:100%;max-width:430px;background:var(--white);border-radius:20px 20px 0 0;max-height:80vh;overflow-y:auto;}
+.city-modal{width:100%;max-width:430px;background:#fff;border-radius:20px 20px 0 0;max-height:80vh;overflow-y:auto;}
 @media(min-width:500px){.city-modal{border-radius:20px;}}
 .city-head{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--border);}
 .city-head-title{font-family:var(--font-d);font-size:18px;font-weight:700;color:var(--text);}
@@ -32,8 +32,7 @@ body{font-family:var(--font-b);background:var(--surface2);display:flex;align-ite
 .city-item{display:flex;align-items:center;gap:10px;padding:14px 20px;cursor:pointer;border-bottom:1px solid var(--border);transition:background 0.1s;}
 .city-item:hover{background:var(--surface2);}
 .city-item.active .city-n{color:var(--brand);font-weight:600;}
-.city-e{font-size:20px;}
-.city-n{font-size:13px;color:var(--text2);}
+.city-e{font-size:20px;}.city-n{font-size:13px;color:var(--text2);}
 .tabs{display:flex;background:var(--brand);padding:0 10px;flex-shrink:0;}
 .tab{flex:1;padding:9px 4px 11px;font-family:var(--font-d);font-size:10px;font-weight:700;text-align:center;cursor:pointer;color:rgba(255,255,255,0.38);letter-spacing:0.8px;text-transform:uppercase;border-bottom:2.5px solid transparent;transition:all 0.15s;background:none;border-top:none;border-left:none;border-right:none;}
 .tab.active{color:var(--gold);border-bottom-color:var(--gold);}
@@ -41,10 +40,10 @@ body{font-family:var(--font-b);background:var(--surface2);display:flex;align-ite
 .filters::-webkit-scrollbar{display:none;}
 .chip{white-space:nowrap;padding:6px 14px;font-family:var(--font-b);font-size:12px;font-weight:500;border-radius:30px;border:1px solid var(--border2);background:transparent;color:var(--text2);cursor:pointer;transition:all 0.15s;flex-shrink:0;}
 .chip.active{background:var(--brand);color:#fff;border-color:var(--brand);}
-.content{flex:1;overflow-y:auto;display:flex;flex-direction:column;scrollbar-width:thin;scrollbar-color:var(--surface2) transparent;}
+.content{flex:1;overflow-y:auto;display:flex;flex-direction:column;scrollbar-width:thin;}
 .pane{display:none;flex-direction:column;gap:14px;padding:14px 16px;}
 .pane.active{display:flex;}
-.card{background:var(--white);border-radius:var(--r);border:1px solid var(--border);overflow:hidden;transition:box-shadow 0.2s,transform 0.15s;}
+.card{background:#fff;border-radius:var(--r);border:1px solid var(--border);overflow:hidden;transition:box-shadow 0.2s,transform 0.15s;}
 .card:hover{box-shadow:0 4px 20px rgba(15,14,26,0.09);transform:translateY(-1px);}
 .card-hero{height:124px;display:flex;align-items:center;justify-content:center;font-size:46px;position:relative;}
 .type-badge{position:absolute;top:10px;left:10px;font-size:10px;font-weight:700;font-family:var(--font-d);letter-spacing:0.6px;text-transform:uppercase;padding:3px 9px;border-radius:20px;}
@@ -139,15 +138,15 @@ body{font-family:var(--font-b);background:var(--surface2);display:flex;align-ite
     <div class="topbar-row">
       <div class="logo">loc<em>a</em>le <span>beta</span></div>
       <div style="display:flex;gap:8px;align-items:center">
-        <button class="profile-btn" id="profile-btn" onclick="openAuth()">👤</button>
+        <button class="profile-btn" id="profile-btn" onclick="openAuth()">&#128100;</button>
         <button class="city-btn" onclick="openCityModal()">
-          <span id="city-pin">🤠</span>
+          <span id="city-pin">&#129312;</span>
           <span id="city-label">College Station</span>
-          <span style="font-size:10px;color:rgba(255,255,255,0.5);margin-left:2px;">▾</span>
+          <span style="font-size:10px;color:rgba(255,255,255,0.5);margin-left:2px;">&#9662;</span>
         </button>
       </div>
     </div>
-    <div class="topbar-tagline" id="topbar-sub">Discover what's worth your time, tonight</div>
+    <div class="topbar-tagline" id="topbar-sub">Discover what is worth your time, tonight</div>
   </div>
   <div class="tabs">
     <button class="tab active" id="tab-discover" onclick="switchTab('discover')">Discover</button>
@@ -163,38 +162,38 @@ body{font-family:var(--font-b);background:var(--surface2);display:flex;align-ite
     <div class="pane" id="pane-ai">
       <div class="ai-panel">
         <div class="ai-top"><div class="ai-blink"></div><div class="ai-name">Locale AI</div><div class="ai-sub">Powered by Claude</div></div>
-        <div class="ai-q" id="ai-q">What's the vibe tonight?</div>
+        <div class="ai-q" id="ai-q">What is the vibe tonight?</div>
         <div class="ai-opts" id="ai-opts">
-          <button class="ai-opt" onclick="aiFlow('casual')">Something casual &amp; laid-back</button>
-          <button class="ai-opt" onclick="aiFlow('upscale')">Upscale — I want to impress</button>
-          <button class="ai-opt" onclick="aiFlow('adventure')">Something unique &amp; adventurous</button>
+          <button class="ai-opt" onclick="aiFlow('casual')">Something casual and laid-back</button>
+          <button class="ai-opt" onclick="aiFlow('upscale')">Upscale - I want to impress</button>
+          <button class="ai-opt" onclick="aiFlow('adventure')">Something unique and adventurous</button>
           <button class="ai-opt" onclick="aiFlow('family')">Family-friendly fun</button>
         </div>
         <div class="ai-loading" id="ai-loading" style="display:none"><div class="ai-ld"></div><div class="ai-ld"></div><div class="ai-ld"></div></div>
         <div id="ai-result" style="display:none"></div>
         <div class="ask-row" id="ask-row" style="display:none">
-          <input class="ask-inp" id="ask-inp" placeholder="Ask anything — budget, diet, mood..." onkeydown="if(event.key==='Enter')sendAsk()"/>
-          <button class="ask-btn" id="ask-btn" onclick="sendAsk()">Ask ↗</button>
+          <input class="ask-inp" id="ask-inp" placeholder="Ask anything - budget, diet, mood..." onkeydown="if(event.key==='Enter')sendAsk()"/>
+          <button class="ask-btn" id="ask-btn" onclick="sendAsk()">Ask</button>
         </div>
       </div>
       <div id="ai-cards" style="display:flex;flex-direction:column;gap:14px;"></div>
     </div>
-    <div class="pane" id="pane-social"><div class="slabel">Friends' Activity</div><div id="social-inner"></div></div>
+    <div class="pane" id="pane-social"><div class="slabel">Friends Activity</div><div id="social-inner"></div></div>
     <div class="pane" id="pane-saved">
       <div class="slabel">Your Saved Spots</div>
-      <div id="saved-inner"><div class="empty"><div class="empty-ico">🔖</div><div class="empty-t">Nothing saved yet</div><div class="empty-s">Tap + Save on any spot</div></div></div>
+      <div id="saved-inner"><div class="empty"><div class="empty-ico">&#128278;</div><div class="empty-t">Nothing saved yet</div><div class="empty-s">Tap Save on any spot</div></div></div>
     </div>
   </div>
   <div class="bottom-nav">
-    <button class="nav-btn active" id="nav-discover" onclick="switchTab('discover')"><div class="nav-ico">🗺</div><div class="nav-lbl">Discover</div></button>
-    <button class="nav-btn" id="nav-ai" onclick="switchTab('ai')"><div class="nav-ico">✨</div><div class="nav-lbl">AI Pick</div></button>
-    <button class="nav-btn" id="nav-social" onclick="switchTab('social')"><div class="nav-ico">👥</div><div class="nav-lbl">Friends</div></button>
-    <button class="nav-btn" id="nav-saved" onclick="switchTab('saved')"><div class="nav-ico">🔖</div><div class="nav-lbl">Saved</div><div class="nav-badge" id="saved-badge">0</div></button>
+    <button class="nav-btn active" id="nav-discover" onclick="switchTab('discover')"><div class="nav-ico">&#128506;</div><div class="nav-lbl">Discover</div></button>
+    <button class="nav-btn" id="nav-ai" onclick="switchTab('ai')"><div class="nav-ico">&#10024;</div><div class="nav-lbl">AI Pick</div></button>
+    <button class="nav-btn" id="nav-social" onclick="switchTab('social')"><div class="nav-ico">&#128101;</div><div class="nav-lbl">Friends</div></button>
+    <button class="nav-btn" id="nav-saved" onclick="switchTab('saved')"><div class="nav-ico">&#128278;</div><div class="nav-lbl">Saved</div><div class="nav-badge" id="saved-badge">0</div></button>
   </div>
 </div>
 <div class="city-overlay" id="city-overlay">
   <div class="city-modal">
-    <div class="city-head"><div class="city-head-title">Choose a City</div><button class="city-close" onclick="document.getElementById('city-overlay').classList.remove('open')">✕</button></div>
+    <div class="city-head"><div class="city-head-title">Choose a City</div><button class="city-close" onclick="document.getElementById('city-overlay').classList.remove('open')">X</button></div>
     <div class="city-grid" id="city-grid"></div>
   </div>
 </div>
@@ -217,369 +216,292 @@ body{font-family:var(--font-b);background:var(--surface2);display:flex;align-ite
         <button class="auth-btn" onclick="doAuth('register')">Create Account</button>
       </div>
       <div class="auth-err" id="auth-err"></div>
-      <button class="auth-skip" onclick="document.getElementById('auth-overlay').classList.remove('open')">Skip for now →</button>
+      <button class="auth-skip" onclick="document.getElementById('auth-overlay').classList.remove('open')">Skip for now</button>
     </div>
   </div>
 </div>
 <script>
-// lib/places.js — shared place data
-// This file is referenced by the frontend. Add new cities and places here.
 
-window.LOCALE_DATA = {
-  cities: [
-    { id: 'college-station-tx', label: 'College Station, TX', emoji: '🤠' },
-    { id: 'austin-tx', label: 'Austin, TX', emoji: '🎸' },
-    { id: 'houston-tx', label: 'Houston, TX', emoji: '🚀' },
-    { id: 'dallas-tx', label: 'Dallas, TX', emoji: '🌆' },
-    { id: 'san-antonio-tx', label: 'San Antonio, TX', emoji: '🌮' },
-    { id: 'new-york-ny', label: 'New York, NY', emoji: '🗽' },
-    { id: 'los-angeles-ca', label: 'Los Angeles, CA', emoji: '🌴' },
-    { id: 'chicago-il', label: 'Chicago, IL', emoji: '🌬' },
-    { id: 'miami-fl', label: 'Miami, FL', emoji: '🌊' },
-    { id: 'nashville-tn', label: 'Nashville, TN', emoji: '🎵' },
-    { id: 'denver-co', label: 'Denver, CO', emoji: '🏔' },
-    { id: 'seattle-wa', label: 'Seattle, WA', emoji: '☕' },
-    { id: 'new-orleans-la', label: 'New Orleans, LA', emoji: '🎺' },
-    { id: 'las-vegas-nv', label: 'Las Vegas, NV', emoji: '🎲' },
-    { id: 'portland-or', label: 'Portland, OR', emoji: '🌲' },
-  ],
+var LOCALE_DATA = {"cities": [{"id": "college-station-tx", "label": "College Station, TX", "emoji": "&#129312;"}, {"id": "austin-tx", "label": "Austin, TX", "emoji": "&#127928;"}, {"id": "houston-tx", "label": "Houston, TX", "emoji": "&#128640;"}, {"id": "dallas-tx", "label": "Dallas, TX", "emoji": "&#127750;"}, {"id": "san-antonio-tx", "label": "San Antonio, TX", "emoji": "&#127790;"}, {"id": "new-york-ny", "label": "New York, NY", "emoji": "&#128511;"}, {"id": "los-angeles-ca", "label": "Los Angeles, CA", "emoji": "&#127796;"}, {"id": "chicago-il", "label": "Chicago, IL", "emoji": "&#127754;"}, {"id": "miami-fl", "label": "Miami, FL", "emoji": "&#127754;"}, {"id": "nashville-tn", "label": "Nashville, TN", "emoji": "&#127925;"}, {"id": "denver-co", "label": "Denver, CO", "emoji": "&#127956;"}, {"id": "seattle-wa", "label": "Seattle, WA", "emoji": "&#9749;"}, {"id": "new-orleans-la", "label": "New Orleans, LA", "emoji": "&#127930;"}, {"id": "las-vegas-nv", "label": "Las Vegas, NV", "emoji": "&#127922;"}, {"id": "portland-or", "label": "Portland, OR", "emoji": "&#127794;"}], "places": {"college-station-tx": [{"id": "cs1", "emoji": "&#127831;", "name": "Laynes Chicken Fingers", "type": "restaurant", "price": "$", "rating": 4.8, "vibe": "Casual", "status": "open", "wait": "Low wait", "hours": "Until 10pm", "desc": "College Stations legendary local chain. Crispy tenders, secret sauce, zero pretense. A true Aggieland institution.", "tags": ["Local Fave", "Quick Bite", "Late Night"], "friends": ["AJ", "MB"], "friendText": "AJ and 2 others checked in today"}, {"id": "cs2", "emoji": "&#127976;", "name": "The George Hotel", "type": "hotel", "price": "$$$", "rating": 4.7, "vibe": "Upscale", "status": "open", "wait": "Rooms available", "hours": "Check-in 3pm", "desc": "College Stations premier boutique hotel. Rooftop bar with campus views, world-class restaurant on-site.", "tags": ["Rooftop Bar", "Luxury", "Aggie Pride"], "friends": ["SR"], "friendText": "Sarah rated it 5 stars last week"}, {"id": "cs3", "emoji": "&#127923;", "name": "All Star Lanes", "type": "todo", "price": "$$", "rating": 4.4, "vibe": "Fun", "status": "busy", "wait": "Busy tonight", "hours": "Until midnight", "desc": "Bowling, arcade games, billiards, and a full bar. Perfect for any size group.", "tags": ["Group Activity", "Family Friendly", "Late Night"], "friends": ["TK", "AJ"], "friendText": "Tinas group is here right now"}, {"id": "cs4", "emoji": "&#127790;", "name": "Torchys Tacos", "type": "restaurant", "price": "$$", "rating": 4.6, "vibe": "Lively", "status": "open", "wait": "20 min wait", "hours": "Until 11pm", "desc": "Bold tacos, dam good queso, strong margaritas. The patio scene is electric on weekends.", "tags": ["Trending", "Patio", "Margaritas"], "friends": ["MB"], "friendText": "Maria posted a photo here tonight"}, {"id": "cs5", "emoji": "&#127917;", "name": "Arts Council of Brazos Valley", "type": "todo", "price": "$", "rating": 4.5, "vibe": "Cultural", "status": "open", "wait": "Show at 7pm", "hours": "Event tonight 7pm", "desc": "Live local theater and rotating gallery exhibits. An unexpected cultural gem.", "tags": ["Date Night", "Culture", "Local Art"], "friends": [], "friendText": ""}, {"id": "cs6", "emoji": "&#127863;", "name": "Messina Hof Winery", "type": "restaurant", "price": "$$$", "rating": 4.9, "vibe": "Romantic", "status": "open", "wait": "Reservations recommended", "hours": "Until 9pm", "desc": "Award-winning Texas wine and gourmet cuisine. The most romantic dining in the Brazos Valley.", "tags": ["Date Night", "Award Winning", "Romantic"], "friends": ["SR", "TK"], "friendText": "2 friends visited this week"}, {"id": "cs7", "emoji": "&#127866;", "name": "Northgate District", "type": "todo", "price": "$", "rating": 4.3, "vibe": "Lively", "status": "open", "wait": "Busy on weekends", "hours": "Bars until 2am", "desc": "Aggieland entertainment district. Bars, live music, late-night food all within walking distance of campus.", "tags": ["Nightlife", "Live Music", "College Scene"], "friends": ["AJ", "TK"], "friendText": "3 friends are out on Northgate"}, {"id": "cs8", "emoji": "&#127828;", "name": "Maddens Casual Grill", "type": "restaurant", "price": "$$", "rating": 4.5, "vibe": "Relaxed", "status": "open", "wait": "15 min wait", "hours": "Until 10pm", "desc": "Beloved local burger spot with a full bar and great patio. A staple for Aggies and locals alike.", "tags": ["Burgers", "Patio", "Local Fave"], "friends": ["MB"], "friendText": "Mike ate here for lunch"}, {"id": "cs9", "emoji": "&#127843;", "name": "Fuji Japanese Restaurant", "type": "restaurant", "price": "$$", "rating": 4.6, "vibe": "Cozy", "status": "open", "wait": "15 min wait", "hours": "Until 10pm", "desc": "The best sushi in College Station. Fresh rolls, great sake selection, and a relaxed date-night atmosphere.", "tags": ["Sushi", "Date Night", "Japanese"], "friends": ["SR"], "friendText": "Sarah recommends the spicy tuna roll"}, {"id": "cs10", "emoji": "&#127981;", "name": "George Bush Presidential Library", "type": "todo", "price": "$", "rating": 4.5, "vibe": "Historic", "status": "open", "wait": "No wait", "hours": "Until 5pm", "desc": "Fascinating presidential library on the Texas AM campus. A surprisingly engaging visit for all ages.", "tags": ["Educational", "History", "Family Friendly"], "friends": [], "friendText": ""}, {"id": "cs11", "emoji": "&#127846;", "name": "Lick Honest Ice Creams", "type": "restaurant", "price": "$", "rating": 4.7, "vibe": "Sweet", "status": "open", "wait": "Short wait", "hours": "Until 10pm", "desc": "Creative small-batch ice cream with unexpected Texas flavors. A beloved local dessert stop.", "tags": ["Dessert", "Local", "Family Friendly"], "friends": ["MB", "AJ"], "friendText": "2 friends stopped here after dinner"}], "austin-tx": [{"id": "au1", "emoji": "&#127928;", "name": "6th Street", "type": "todo", "price": "$", "rating": 4.6, "vibe": "Electric", "status": "open", "wait": "Busy tonight", "hours": "Until 2am", "desc": "Austins legendary live music strip. Dozens of venues, every genre, every night of the week.", "tags": ["Live Music", "Nightlife", "Iconic"], "friends": ["JD"], "friendText": "Josh is on 6th right now"}, {"id": "au2", "emoji": "&#129385;", "name": "Franklin Barbecue", "type": "restaurant", "price": "$$", "rating": 4.9, "vibe": "Legendary", "status": "open", "wait": "2 plus hr line", "hours": "Until sold out", "desc": "Americas most famous BBQ. Worth every minute of the wait. Get there by 9am.", "tags": ["World Famous", "BBQ", "Worth the Wait"], "friends": ["AL", "JD"], "friendText": "2 friends went last weekend"}, {"id": "au3", "emoji": "&#127944;", "name": "Barton Springs Pool", "type": "todo", "price": "$", "rating": 4.8, "vibe": "Refreshing", "status": "open", "wait": "Low crowds", "hours": "Until 10pm", "desc": "Natural spring-fed pool, 68 degrees year-round, in the heart of Zilker Park. Austins best outdoor escape.", "tags": ["Outdoor", "Swimming", "Nature"], "friends": [], "friendText": ""}, {"id": "au4", "emoji": "&#127976;", "name": "Hotel ZaZa Austin", "type": "hotel", "price": "$$$", "rating": 4.7, "vibe": "Boutique", "status": "open", "wait": "Rooms available", "hours": "Check-in 3pm", "desc": "One of Austins most stylish hotels. Rooftop pool, eclectic design, prime location on Congress Ave.", "tags": ["Rooftop Pool", "Boutique", "Congress Ave"], "friends": ["AL"], "friendText": "Alex stayed here last month"}, {"id": "au5", "emoji": "&#127790;", "name": "Veracruz All Natural", "type": "restaurant", "price": "$", "rating": 4.8, "vibe": "Authentic", "status": "open", "wait": "Short wait", "hours": "Until 3pm", "desc": "James Beard-nominated breakfast tacos. The migas taco alone is worth the trip to Austin.", "tags": ["Breakfast", "Tacos", "James Beard"], "friends": ["JD", "AL"], "friendText": "Two friends recommend the migas taco"}, {"id": "au6", "emoji": "&#127968;", "name": "South Congress Ave", "type": "todo", "price": "$", "rating": 4.7, "vibe": "Hip", "status": "open", "wait": "Always buzzing", "hours": "Shops until 8pm", "desc": "Austins coolest street. Vintage shops, galleries, iconic restaurants, and the best people-watching in Texas.", "tags": ["Shopping", "Local Art", "Iconic"], "friends": ["AL"], "friendText": "Alex browsed shops here yesterday"}, {"id": "au7", "emoji": "&#127866;", "name": "The Hole in the Wall", "type": "todo", "price": "$", "rating": 4.5, "vibe": "Dive Bar", "status": "open", "wait": "No wait", "hours": "Until 2am", "desc": "Austins most beloved dive bar. Live music every night, ice-cold Lone Stars, and zero pretension.", "tags": ["Live Music", "Dive Bar", "Late Night"], "friends": [], "friendText": ""}, {"id": "au8", "emoji": "&#127829;", "name": "Home Slice Pizza", "type": "restaurant", "price": "$$", "rating": 4.7, "vibe": "Fun", "status": "open", "wait": "30 min wait", "hours": "Until midnight", "desc": "New York-style pizza by the slice on South Congress. The late-night lines tell you everything you need to know.", "tags": ["Pizza", "Late Night", "South Congress"], "friends": ["JD"], "friendText": "Josh grabbed slices here last night"}, {"id": "au9", "emoji": "&#127760;", "name": "Zilker Park", "type": "todo", "price": "$", "rating": 4.9, "vibe": "Serene", "status": "open", "wait": "No wait", "hours": "Sunrise to sunset", "desc": "Austins crown jewel. 351 acres of trails, fields, and the famous Barton Springs. Free and always beautiful.", "tags": ["Free", "Outdoor", "Nature"], "friends": [], "friendText": ""}], "houston-tx": [{"id": "ho1", "emoji": "&#128640;", "name": "Space Center Houston", "type": "todo", "price": "$$", "rating": 4.7, "vibe": "Inspiring", "status": "open", "wait": "Moderate", "hours": "Until 5pm", "desc": "NASAs official visitor center. Real spacecraft, Mission Control, and astronaut training simulations.", "tags": ["Family Friendly", "Educational", "Iconic"], "friends": ["MR"], "friendText": "Mike took his kids here yesterday"}, {"id": "ho2", "emoji": "&#127836;", "name": "Underbelly Hospitality", "type": "restaurant", "price": "$$$", "rating": 4.8, "vibe": "Elevated", "status": "open", "wait": "Reservations needed", "hours": "Dinner until 10pm", "desc": "James Beard Award-winning chef Chris Shepherds flagship. Houstons diverse food culture distilled into extraordinary dishes.", "tags": ["James Beard", "Date Night", "American"], "friends": ["SL", "MR"], "friendText": "2 friends dined here this week"}, {"id": "ho3", "emoji": "&#127976;", "name": "Hotel Granduca Houston", "type": "hotel", "price": "$$$$", "rating": 4.8, "vibe": "Luxury", "status": "open", "wait": "Rooms available", "hours": "Check-in 3pm", "desc": "Italian-inspired luxury villa in the Galleria area. Impeccable service, stunning grounds, exceptional restaurant.", "tags": ["Luxury", "Italian", "Galleria"], "friends": [], "friendText": ""}, {"id": "ho4", "emoji": "&#127912;", "name": "Museum of Fine Arts Houston", "type": "todo", "price": "$", "rating": 4.6, "vibe": "Cultural", "status": "open", "wait": "Low wait", "hours": "Until 9pm Thu", "desc": "One of the largest art museums in the US. World-class rotating exhibits and exceptional permanent collection.", "tags": ["Culture", "Art", "Family Friendly"], "friends": ["SL"], "friendText": "Sara visited last weekend"}, {"id": "ho5", "emoji": "&#129360;", "name": "Brennans of Houston", "type": "restaurant", "price": "$$$", "rating": 4.7, "vibe": "Classic", "status": "open", "wait": "Reservations recommended", "hours": "Until 10pm", "desc": "New Orleans-inspired Creole cuisine in Houston since 1967. The turtle soup and bananas foster are legendary.", "tags": ["Classic", "Creole", "Date Night"], "friends": ["MR"], "friendText": "Mike celebrated his anniversary here"}, {"id": "ho6", "emoji": "&#127966;", "name": "Buffalo Bayou Park", "type": "todo", "price": "$", "rating": 4.6, "vibe": "Scenic", "status": "open", "wait": "No wait", "hours": "Sunrise to sunset", "desc": "160 acres of trails, art installations, and green space along the bayou. Houstons answer to Central Park.", "tags": ["Free", "Outdoor", "Trails"], "friends": [], "friendText": ""}, {"id": "ho7", "emoji": "&#127843;", "name": "Uchi Houston", "type": "restaurant", "price": "$$$", "rating": 4.8, "vibe": "Upscale", "status": "open", "wait": "Reservations needed", "hours": "Until 11pm", "desc": "Tyson Coles acclaimed Japanese cuisine. The omakase here rivals anything on the coasts.", "tags": ["Japanese", "Omakase", "Date Night"], "friends": ["SL"], "friendText": "Sara had her birthday dinner here"}], "dallas-tx": [{"id": "da1", "emoji": "&#129385;", "name": "Al Biernats", "type": "restaurant", "price": "$$$$", "rating": 4.8, "vibe": "Classic", "status": "open", "wait": "Reservations needed", "hours": "Until 11pm", "desc": "Dallas quintessential steakhouse. Where power players and celebrities dine. Incredible dry-aged beef.", "tags": ["Steakhouse", "Upscale", "Classic"], "friends": [], "friendText": ""}, {"id": "da2", "emoji": "&#127912;", "name": "Dallas Museum of Art", "type": "todo", "price": "$", "rating": 4.6, "vibe": "Cultural", "status": "open", "wait": "Low wait", "hours": "Until 9pm", "desc": "One of the largest art museums in the US, with free general admission. Over 24,000 works spanning 5,000 years.", "tags": ["Free", "Culture", "Art"], "friends": [], "friendText": ""}, {"id": "da3", "emoji": "&#127976;", "name": "The Adolphus Hotel", "type": "hotel", "price": "$$$", "rating": 4.7, "vibe": "Historic", "status": "open", "wait": "Rooms available", "hours": "Check-in 3pm", "desc": "Dallas grandest historic hotel since 1912. Baroque architecture, legendary service, and an iconic bar.", "tags": ["Historic", "Luxury", "Downtown"], "friends": [], "friendText": ""}, {"id": "da4", "emoji": "&#127828;", "name": "Maple and Motor", "type": "restaurant", "price": "$", "rating": 4.7, "vibe": "Local", "status": "open", "wait": "Low wait", "hours": "Until 9pm", "desc": "Dallas best no-frills burger. Cash only, picnic tables, and absolutely massive patties. A local legend.", "tags": ["Burgers", "Cash Only", "Local Fave"], "friends": [], "friendText": ""}, {"id": "da5", "emoji": "&#127867;", "name": "Deep Ellum", "type": "todo", "price": "$", "rating": 4.6, "vibe": "Eclectic", "status": "open", "wait": "Busy weekends", "hours": "Bars until 2am", "desc": "Dallas most vibrant neighborhood. Live music, street art, craft cocktail bars, and incredible restaurants.", "tags": ["Nightlife", "Live Music", "Street Art"], "friends": [], "friendText": ""}], "san-antonio-tx": [{"id": "sa1", "emoji": "&#127758;", "name": "The River Walk", "type": "todo", "price": "$", "rating": 4.8, "vibe": "Scenic", "status": "open", "wait": "Always open", "hours": "24 hours", "desc": "San Antonios beloved urban waterway. Lined with restaurants, bars, and hotels. Magical at night.", "tags": ["Iconic", "Outdoor", "Nightlife"], "friends": [], "friendText": ""}, {"id": "sa2", "emoji": "&#127963;", "name": "The Alamo", "type": "todo", "price": "$", "rating": 4.5, "vibe": "Historic", "status": "open", "wait": "Low wait", "hours": "Until 7pm", "desc": "Texas most iconic landmark. The site of the famous 1836 battle for independence. Free to enter.", "tags": ["Historic", "Free", "Iconic"], "friends": [], "friendText": ""}, {"id": "sa3", "emoji": "&#127790;", "name": "Mi Tierra Cafe", "type": "restaurant", "price": "$$", "rating": 4.6, "vibe": "Festive", "status": "open", "wait": "30 min wait", "hours": "Open 24 hours", "desc": "A San Antonio institution since 1941. Open 24 hours, incredible Tex-Mex, and the most festive decor you have ever seen.", "tags": ["Open 24hrs", "Tex-Mex", "Institution"], "friends": [], "friendText": ""}, {"id": "sa4", "emoji": "&#127976;", "name": "Hotel Emma", "type": "hotel", "price": "$$$$", "rating": 4.9, "vibe": "Stunning", "status": "open", "wait": "Rooms available", "hours": "Check-in 3pm", "desc": "One of the most beautiful hotels in America, in a converted 1887 brewery. Breathtaking design in the Pearl District.", "tags": ["Stunning", "Historic", "Pearl District"], "friends": [], "friendText": ""}, {"id": "sa5", "emoji": "&#127866;", "name": "The Pearl District", "type": "todo", "price": "$", "rating": 4.7, "vibe": "Hip", "status": "open", "wait": "Busy weekends", "hours": "Shops until 9pm", "desc": "San Antonios most vibrant neighborhood, built around a converted 1883 brewery. Farmers market, restaurants, shops.", "tags": ["Trending", "Farmers Market", "Restaurants"], "friends": [], "friendText": ""}], "new-york-ny": [{"id": "ny1", "emoji": "&#127829;", "name": "Di Fara Pizza", "type": "restaurant", "price": "$$", "rating": 4.9, "vibe": "Legendary", "status": "open", "wait": "1 hr wait", "hours": "Until 8pm", "desc": "Brooklyns legendary pizza, hand-made by Dom DeMarcos family since 1965. Worth the subway ride and the wait.", "tags": ["Legendary", "Brooklyn", "Cash Only"], "friends": [], "friendText": ""}, {"id": "ny2", "emoji": "&#127976;", "name": "The NoMad Hotel", "type": "hotel", "price": "$$$$", "rating": 4.8, "vibe": "Luxe", "status": "open", "wait": "Rooms available", "hours": "Check-in 3pm", "desc": "One of NYCs most beautiful hotels. Stunning Flatiron location, incredible restaurant, and a legendary bar.", "tags": ["Flatiron", "Luxe", "Bar Scene"], "friends": [], "friendText": ""}, {"id": "ny3", "emoji": "&#127917;", "name": "Broadway Theater District", "type": "todo", "price": "$$$", "rating": 4.9, "vibe": "Electric", "status": "open", "wait": "Check showtimes", "hours": "Evening shows", "desc": "The worlds greatest theater district. From long-running classics to bold new productions. Always unmissable.", "tags": ["Theater", "Iconic", "Date Night"], "friends": [], "friendText": ""}, {"id": "ny4", "emoji": "&#129385;", "name": "Peter Luger Steak House", "type": "restaurant", "price": "$$$$", "rating": 4.8, "vibe": "Classic", "status": "open", "wait": "Reservations weeks out", "hours": "Until 10:45pm", "desc": "Brooklyns iconic cash-only steakhouse since 1887. The porterhouse is transcendent. Book weeks in advance.", "tags": ["Iconic", "Cash Only", "Steakhouse"], "friends": [], "friendText": ""}, {"id": "ny5", "emoji": "&#127795;", "name": "Central Park", "type": "todo", "price": "$", "rating": 4.9, "vibe": "Timeless", "status": "open", "wait": "Always open", "hours": "6am to 1am", "desc": "843 acres of pure New York magic. Rent a bike, find a bench, get lost. The citys greatest backyard.", "tags": ["Free", "Outdoor", "Iconic"], "friends": [], "friendText": ""}, {"id": "ny6", "emoji": "&#127836;", "name": "Momofuku Noodle Bar", "type": "restaurant", "price": "$$", "rating": 4.7, "vibe": "Lively", "status": "open", "wait": "30 min wait", "hours": "Until midnight", "desc": "David Changs original East Village ramen spot that launched a culinary empire. The pork buns are required.", "tags": ["Ramen", "David Chang", "East Village"], "friends": [], "friendText": ""}, {"id": "ny7", "emoji": "&#127963;", "name": "The Metropolitan Museum of Art", "type": "todo", "price": "$$", "rating": 4.9, "vibe": "World-Class", "status": "open", "wait": "Low wait", "hours": "Until 9pm Fri-Sat", "desc": "One of the greatest museums on earth. You could spend a week and not see everything. Suggested admission.", "tags": ["World-Class", "Art", "5th Avenue"], "friends": [], "friendText": ""}], "los-angeles-ca": [{"id": "la1", "emoji": "&#127790;", "name": "Guerrilla Tacos", "type": "restaurant", "price": "$", "rating": 4.8, "vibe": "Creative", "status": "open", "wait": "Short wait", "hours": "Until 3pm", "desc": "Chef Wes Avilas celebrated taco concept. Unexpected ingredients, perfect technique, incredible value.", "tags": ["James Beard", "Creative", "Lunch"], "friends": [], "friendText": ""}, {"id": "la2", "emoji": "&#127940;", "name": "Venice Beach Boardwalk", "type": "todo", "price": "$", "rating": 4.5, "vibe": "Eccentric", "status": "open", "wait": "Always busy", "hours": "Sunrise to sunset", "desc": "LAs most colorful outdoor space. Street performers, skate park, Muscle Beach, and wall-to-wall people-watching.", "tags": ["Beach", "Iconic", "Free"], "friends": [], "friendText": ""}, {"id": "la3", "emoji": "&#127976;", "name": "Chateau Marmont", "type": "hotel", "price": "$$$$", "rating": 4.7, "vibe": "Legendary", "status": "open", "wait": "Rooms available", "hours": "Check-in 3pm", "desc": "Hollywoods most storied hotel since 1929. Celebrities, mystery, and a poolside bar that never disappoints.", "tags": ["Legendary", "Hollywood", "Bar Scene"], "friends": [], "friendText": ""}, {"id": "la4", "emoji": "&#127912;", "name": "The Getty Center", "type": "todo", "price": "$", "rating": 4.8, "vibe": "Breathtaking", "status": "open", "wait": "Low wait", "hours": "Until 5:30pm", "desc": "Free admission. World-class art collection and the best views of Los Angeles from the hilltop.", "tags": ["Free", "Art", "Views"], "friends": [], "friendText": ""}, {"id": "la5", "emoji": "&#127940;", "name": "Malibu Beach", "type": "todo", "price": "$", "rating": 4.8, "vibe": "Beautiful", "status": "open", "wait": "Busy weekends", "hours": "Sunrise to sunset", "desc": "27 miles of Pacific coastline and the most famous beach addresses in the world. Zuma Beach is the locals pick.", "tags": ["Beach", "Scenic", "Free"], "friends": [], "friendText": ""}, {"id": "la6", "emoji": "&#127829;", "name": "Jon and Vinnys", "type": "restaurant", "price": "$$$", "rating": 4.7, "vibe": "Hip", "status": "open", "wait": "1 hr wait", "hours": "Until 11pm", "desc": "LAs most talked-about Italian restaurant. Perfect pasta, incredible natural wine list, and a scene that never quits.", "tags": ["Italian", "Trendy", "Date Night"], "friends": [], "friendText": ""}], "chicago-il": [{"id": "ch1", "emoji": "&#127829;", "name": "Lou Malnatis Pizzeria", "type": "restaurant", "price": "$$", "rating": 4.8, "vibe": "Classic", "status": "open", "wait": "45 min wait", "hours": "Until 11pm", "desc": "Chicago deep dish done right since 1971. Buttery crust, chunky tomato sauce, impossible amounts of cheese.", "tags": ["Deep Dish", "Classic", "Chicago Icon"], "friends": [], "friendText": ""}, {"id": "ch2", "emoji": "&#127912;", "name": "Art Institute of Chicago", "type": "todo", "price": "$$", "rating": 4.9, "vibe": "World-Class", "status": "open", "wait": "Low wait", "hours": "Until 8pm Thu", "desc": "One of the greatest art museums in the world. The Impressionist collection alone justifies the trip to Chicago.", "tags": ["World-Class", "Art", "Millennium Park"], "friends": [], "friendText": ""}, {"id": "ch3", "emoji": "&#127976;", "name": "The Langham Chicago", "type": "hotel", "price": "$$$$", "rating": 4.9, "vibe": "Refined", "status": "open", "wait": "Rooms available", "hours": "Check-in 3pm", "desc": "Chicagos most refined luxury hotel, on the Chicago River. Extraordinary service, stunning views, incredible spa.", "tags": ["Luxury", "River Views", "Spa"], "friends": [], "friendText": ""}, {"id": "ch4", "emoji": "&#127862;", "name": "The Aviary", "type": "todo", "price": "$$$$", "rating": 4.8, "vibe": "Avant-Garde", "status": "open", "wait": "Reservations required", "hours": "Until midnight", "desc": "Grant Achatzs legendary cocktail bar. Cocktails as culinary art. One of the most unique experiences in America.", "tags": ["Cocktails", "Avant-Garde", "Grant Achatz"], "friends": [], "friendText": ""}, {"id": "ch5", "emoji": "&#127789;", "name": "Portillos Hot Dogs", "type": "restaurant", "price": "$", "rating": 4.7, "vibe": "Chicago Classic", "status": "open", "wait": "Short wait", "hours": "Until 11pm", "desc": "The Chicago-style hot dog done to perfection. Never ketchup. Always the works. A city institution since 1963.", "tags": ["Hot Dogs", "Chicago Style", "Institution"], "friends": [], "friendText": ""}], "miami-fl": [{"id": "mi1", "emoji": "&#127940;", "name": "South Beach", "type": "todo", "price": "$", "rating": 4.7, "vibe": "Electric", "status": "open", "wait": "Always busy", "hours": "24 hours", "desc": "Miamis iconic Art Deco beach strip. Ocean Drive, neon lights, world-class people-watching, and warm Atlantic water.", "tags": ["Beach", "Nightlife", "Iconic"], "friends": [], "friendText": ""}, {"id": "mi2", "emoji": "&#129385;", "name": "Stubborn Seed", "type": "restaurant", "price": "$$$", "rating": 4.8, "vibe": "Creative", "status": "open", "wait": "Reservations recommended", "hours": "Dinner until 11pm", "desc": "James Beard Award-winning Chef Jeremy Fords creative American cuisine. One of Miamis most exciting restaurants.", "tags": ["James Beard", "Creative", "Fine Dining"], "friends": [], "friendText": ""}, {"id": "mi3", "emoji": "&#127976;", "name": "Faena Hotel Miami Beach", "type": "hotel", "price": "$$$$", "rating": 4.8, "vibe": "Dramatic", "status": "open", "wait": "Rooms available", "hours": "Check-in 3pm", "desc": "The most dramatic hotel in Miami. Gold mammoth sculpture, theatrical suites, and a beach club that never sleeps.", "tags": ["Dramatic", "Luxury", "Beach Club"], "friends": [], "friendText": ""}, {"id": "mi4", "emoji": "&#127912;", "name": "Wynwood Walls", "type": "todo", "price": "$", "rating": 4.7, "vibe": "Creative", "status": "open", "wait": "Low wait", "hours": "Until 11pm", "desc": "The worlds largest outdoor street art museum. Miamis coolest neighborhood, always evolving, always surprising.", "tags": ["Street Art", "Free", "Wynwood"], "friends": [], "friendText": ""}, {"id": "mi5", "emoji": "&#127833;", "name": "Versailles Restaurant", "type": "restaurant", "price": "$$", "rating": 4.6, "vibe": "Cultural", "status": "open", "wait": "30 min wait", "hours": "Until midnight", "desc": "The most famous Cuban restaurant in America. Little Havana institution since 1971. The ropa vieja is perfect.", "tags": ["Cuban", "Little Havana", "Institution"], "friends": [], "friendText": ""}], "nashville-tn": [{"id": "na1", "emoji": "&#127925;", "name": "Broadway Honky-Tonks", "type": "todo", "price": "$", "rating": 4.7, "vibe": "Wild", "status": "open", "wait": "Always hopping", "hours": "Until 3am", "desc": "Nashvilles legendary strip of live country music bars. Free entry, cold beer, and world-class musicians every night.", "tags": ["Live Music", "Free Entry", "Nightlife"], "friends": [], "friendText": ""}, {"id": "na2", "emoji": "&#127831;", "name": "Hattie Bs Hot Chicken", "type": "restaurant", "price": "$", "rating": 4.8, "vibe": "Fiery", "status": "open", "wait": "45 min wait", "hours": "Until 10pm", "desc": "Nashville hot chicken at its finest. Start at Damn Hot and work your way up. This is the real thing.", "tags": ["Hot Chicken", "Worth the Wait", "Local Legend"], "friends": [], "friendText": ""}, {"id": "na3", "emoji": "&#127976;", "name": "The Joseph Nashville", "type": "hotel", "price": "$$$", "rating": 4.8, "vibe": "Artistic", "status": "open", "wait": "Rooms available", "hours": "Check-in 4pm", "desc": "Nashvilles most beautiful boutique hotel. Curated art collection, rooftop bar, and a stunning location downtown.", "tags": ["Boutique", "Art Hotel", "Rooftop"], "friends": [], "friendText": ""}, {"id": "na4", "emoji": "&#127928;", "name": "Bluebird Cafe", "type": "todo", "price": "$$", "rating": 4.9, "vibe": "Intimate", "status": "open", "wait": "Reservations fill fast", "hours": "Shows nightly", "desc": "Where country music legends got their start. An intimate listening room where tomorrows stars perform tonight.", "tags": ["Live Music", "Intimate", "Legendary"], "friends": [], "friendText": ""}, {"id": "na5", "emoji": "&#127863;", "name": "Corsair Distillery", "type": "todo", "price": "$$", "rating": 4.5, "vibe": "Craft", "status": "open", "wait": "No wait", "hours": "Until 8pm", "desc": "Award-winning craft distillery making exceptional whiskey, gin, and absinthe. Tours and tastings available.", "tags": ["Whiskey", "Craft", "Tours"], "friends": [], "friendText": ""}], "denver-co": [{"id": "de1", "emoji": "&#127956;", "name": "Red Rocks Amphitheatre", "type": "todo", "price": "$$", "rating": 4.9, "vibe": "Breathtaking", "status": "open", "wait": "Check schedule", "hours": "Varies", "desc": "The most beautiful outdoor music venue on earth. Even without a show, hike the trails for stunning views.", "tags": ["Music Venue", "Iconic", "Outdoor"], "friends": [], "friendText": ""}, {"id": "de2", "emoji": "&#127866;", "name": "Great Divide Brewing", "type": "todo", "price": "$", "rating": 4.6, "vibe": "Craft", "status": "open", "wait": "Low wait", "hours": "Until 10pm", "desc": "Denvers legendary craft brewery. Sample award-winning Colorado beers in a laid-back taproom.", "tags": ["Craft Beer", "Local", "Taproom"], "friends": [], "friendText": ""}, {"id": "de3", "emoji": "&#129385;", "name": "Elways Denver", "type": "restaurant", "price": "$$$", "rating": 4.7, "vibe": "Classic", "status": "open", "wait": "Reservations recommended", "hours": "Until 10pm", "desc": "John Elways flagship steakhouse. Exceptional Colorado beef, great cocktails, and a reliably excellent experience.", "tags": ["Steakhouse", "Classic", "Downtown"], "friends": [], "friendText": ""}, {"id": "de4", "emoji": "&#127976;", "name": "The Brown Palace Hotel", "type": "hotel", "price": "$$$", "rating": 4.7, "vibe": "Historic", "status": "open", "wait": "Rooms available", "hours": "Check-in 4pm", "desc": "Denvers most storied hotel since 1892. An atrium lobby of unmatched grandeur, right in the heart of downtown.", "tags": ["Historic", "Luxury", "Landmark"], "friends": [], "friendText": ""}, {"id": "de5", "emoji": "&#127956;", "name": "Rocky Mountain National Park", "type": "todo", "price": "$$", "rating": 4.9, "vibe": "Majestic", "status": "open", "wait": "Timed entry required", "hours": "Dawn to dusk", "desc": "One of Americas most spectacular national parks, just 90 minutes from Denver. Elk, wildflowers, and 14,000-ft peaks.", "tags": ["National Park", "Hiking", "Nature"], "friends": [], "friendText": ""}], "seattle-wa": [{"id": "se1", "emoji": "&#9749;", "name": "Pike Place Market", "type": "todo", "price": "$", "rating": 4.8, "vibe": "Lively", "status": "open", "wait": "Busy mornings", "hours": "Until 6pm", "desc": "Americas oldest farmers market, overlooking Puget Sound. Fish throwing, fresh produce, the original Starbucks.", "tags": ["Iconic", "Food", "Free"], "friends": [], "friendText": ""}, {"id": "se2", "emoji": "&#129408;", "name": "Canlis", "type": "restaurant", "price": "$$$$", "rating": 4.9, "vibe": "Legendary", "status": "open", "wait": "Book weeks ahead", "hours": "Dinner only", "desc": "Seattles most legendary restaurant since 1950. Stunning views of Lake Union, flawless service, unforgettable food.", "tags": ["Legendary", "Fine Dining", "Lake Views"], "friends": [], "friendText": ""}, {"id": "se3", "emoji": "&#127976;", "name": "Kimpton Hotel Monaco Seattle", "type": "hotel", "price": "$$$", "rating": 4.7, "vibe": "Playful", "status": "open", "wait": "Rooms available", "hours": "Check-in 3pm", "desc": "Bold, colorful boutique hotel in the heart of downtown. Complimentary wine hour, pet-friendly, and great service.", "tags": ["Boutique", "Pet Friendly", "Downtown"], "friends": [], "friendText": ""}, {"id": "se4", "emoji": "&#127912;", "name": "Chihuly Garden and Glass", "type": "todo", "price": "$$", "rating": 4.8, "vibe": "Magical", "status": "open", "wait": "Low wait", "hours": "Until 8pm", "desc": "Dale Chihulyss breathtaking glass sculpture garden at the base of the Space Needle. Magical at night.", "tags": ["Art", "Unique", "Space Needle"], "friends": [], "friendText": ""}, {"id": "se5", "emoji": "&#127828;", "name": "Dicks Drive-In", "type": "restaurant", "price": "$", "rating": 4.7, "vibe": "Local Classic", "status": "open", "wait": "Short wait", "hours": "Until 2am", "desc": "Seattles beloved 1950s drive-in burger chain. Cheap, delicious, and an absolute institution. The Deluxe is the move.", "tags": ["Burgers", "Local Icon", "Late Night"], "friends": [], "friendText": ""}], "new-orleans-la": [{"id": "no1", "emoji": "&#127930;", "name": "Frenchmen Street", "type": "todo", "price": "$", "rating": 4.9, "vibe": "Soulful", "status": "open", "wait": "Busy after 9pm", "hours": "Until 4am", "desc": "The locals answer to Bourbon Street. Authentic New Orleans jazz, blues, and funk spilling out of every door.", "tags": ["Live Music", "Jazz", "Local Scene"], "friends": [], "friendText": ""}, {"id": "no2", "emoji": "&#129360;", "name": "Dooky Chases Restaurant", "type": "restaurant", "price": "$$", "rating": 4.8, "vibe": "Historic", "status": "open", "wait": "No reservations", "hours": "Until 3pm", "desc": "New Orleans most historic restaurant. Leah Chase fed civil rights leaders here. The fried chicken is transcendent.", "tags": ["Historic", "Iconic", "Creole"], "friends": [], "friendText": ""}, {"id": "no3", "emoji": "&#127976;", "name": "Hotel Monteleone", "type": "hotel", "price": "$$$", "rating": 4.7, "vibe": "Timeless", "status": "open", "wait": "Rooms available", "hours": "Check-in 4pm", "desc": "The French Quarters grandest hotel since 1886. Home to the famous Carousel Bar, it literally rotates.", "tags": ["Historic", "French Quarter", "Carousel Bar"], "friends": [], "friendText": ""}, {"id": "no4", "emoji": "&#127855;", "name": "Cafe Du Monde", "type": "restaurant", "price": "$", "rating": 4.7, "vibe": "Iconic", "status": "open", "wait": "Always a wait", "hours": "Open 24 hours", "desc": "Beignets and cafe au lait since 1862. Powdered sugar everywhere, worth every bite. A New Orleans rite of passage.", "tags": ["Open 24hrs", "Iconic", "Beignets"], "friends": [], "friendText": ""}, {"id": "no5", "emoji": "&#127963;", "name": "The National WWII Museum", "type": "todo", "price": "$$", "rating": 4.9, "vibe": "Moving", "status": "open", "wait": "Low wait", "hours": "Until 5pm", "desc": "Ranked one of the top museums in the world. An emotionally powerful and meticulously curated WWII experience.", "tags": ["Museum", "History", "World-Class"], "friends": [], "friendText": ""}], "las-vegas-nv": [{"id": "lv1", "emoji": "&#127922;", "name": "The Strip at Night", "type": "todo", "price": "$", "rating": 4.8, "vibe": "Dazzling", "status": "open", "wait": "Always open", "hours": "24 hours", "desc": "Nothing prepares you for the first time you walk the Las Vegas Strip at night. Pure sensory overload in the best way.", "tags": ["Iconic", "Free", "Nightlife"], "friends": [], "friendText": ""}, {"id": "lv2", "emoji": "&#129385;", "name": "Gordon Ramsays Hells Kitchen", "type": "restaurant", "price": "$$$", "rating": 4.7, "vibe": "Fun", "status": "open", "wait": "Reservations recommended", "hours": "Until midnight", "desc": "The TV set recreated at Caesars Palace. Exceptional food, great cocktails, and the thrill of dining on camera.", "tags": ["Celebrity Chef", "Fun", "Caesars"], "friends": [], "friendText": ""}, {"id": "lv3", "emoji": "&#127976;", "name": "The Venetian Resort", "type": "hotel", "price": "$$$$", "rating": 4.8, "vibe": "Grand", "status": "open", "wait": "Rooms available", "hours": "Check-in 3pm", "desc": "Las Vegas most impressive mega-resort. All-suite rooms, indoor canals, and the best casino floor on the Strip.", "tags": ["Grand", "All-Suite", "The Strip"], "friends": [], "friendText": ""}, {"id": "lv4", "emoji": "&#127917;", "name": "Cirque du Soleil O", "type": "todo", "price": "$$$$", "rating": 4.9, "vibe": "Spectacular", "status": "open", "wait": "Book in advance", "hours": "Evening shows", "desc": "The most spectacular show in Las Vegas. An aquatic theatrical masterpiece performed around a 1.5 million gallon pool.", "tags": ["World-Class", "Bellagio", "Show"], "friends": [], "friendText": ""}, {"id": "lv5", "emoji": "&#127922;", "name": "Fremont Street Experience", "type": "todo", "price": "$", "rating": 4.6, "vibe": "Retro", "status": "open", "wait": "Always busy", "hours": "24 hours", "desc": "Old Vegas at its finest. The worlds largest video screen, zip lines, and vintage casino energy that the Strip has lost.", "tags": ["Old Vegas", "Free", "Nightlife"], "friends": [], "friendText": ""}], "portland-or": [{"id": "po1", "emoji": "&#128218;", "name": "Powells City of Books", "type": "todo", "price": "$", "rating": 4.9, "vibe": "Beloved", "status": "open", "wait": "No wait", "hours": "Until 9pm", "desc": "The worlds largest independent bookstore, occupying an entire city block. An essential Portland pilgrimage.", "tags": ["Bookstore", "Iconic", "Free to Browse"], "friends": [], "friendText": ""}, {"id": "po2", "emoji": "&#127849;", "name": "Voodoo Doughnut", "type": "restaurant", "price": "$", "rating": 4.5, "vibe": "Weird", "status": "open", "wait": "Short wait", "hours": "Open 24 hours", "desc": "Portlands most famous doughnut shop. Bacon maple bars, cereal-topped creations, and a cash-only policy. Very Portland.", "tags": ["Weird", "Open 24hrs", "Cash Only"], "friends": [], "friendText": ""}, {"id": "po3", "emoji": "&#127976;", "name": "The Nines Hotel Portland", "type": "hotel", "price": "$$$", "rating": 4.7, "vibe": "Stylish", "status": "open", "wait": "Rooms available", "hours": "Check-in 3pm", "desc": "Portlands most stylish downtown hotel, in the historic Meier and Frank building. Excellent restaurant and bar.", "tags": ["Stylish", "Downtown", "Historic Building"], "friends": [], "friendText": ""}, {"id": "po4", "emoji": "&#127794;", "name": "Forest Park", "type": "todo", "price": "$", "rating": 4.9, "vibe": "Serene", "status": "open", "wait": "No wait", "hours": "Dawn to dusk", "desc": "One of Americas largest urban forests, 5,100 acres of old-growth trees within city limits. Portlands crown jewel.", "tags": ["Free", "Hiking", "Nature"], "friends": [], "friendText": ""}, {"id": "po5", "emoji": "&#127790;", "name": "Guero", "type": "restaurant", "price": "$$", "rating": 4.7, "vibe": "Creative", "status": "open", "wait": "15 min wait", "hours": "Until 10pm", "desc": "Portlands most creative taco spot. Unexpected combinations, locally sourced ingredients, and a killer natural wine list.", "tags": ["Tacos", "Creative", "Natural Wine"], "friends": [], "friendText": ""}]}};
 
-  places: {
-    'college-station-tx': [
-      { id:'cs1', emoji:'🍗', name:"Layne's Chicken Fingers", type:'restaurant', price:'$', rating:4.8, vibe:'Casual', status:'open', wait:'Low wait', hours:'Until 10pm', desc:"College Station's legendary local chain. Crispy tenders, secret sauce, zero pretense. A true Aggieland institution.", tags:['Local Fave','Quick Bite','Late Night'], friends:['AJ','MB'], friendText:'AJ and 2 others checked in today' },
-      { id:'cs2', emoji:'🏨', name:'The George Hotel', type:'hotel', price:'$$$', rating:4.7, vibe:'Upscale', status:'open', wait:'Rooms available', hours:'Check-in 3pm', desc:"College Station's premier boutique hotel. Rooftop bar with campus views, world-class restaurant on-site.", tags:['Rooftop Bar','Luxury','Aggie Pride'], friends:['SR'], friendText:'Sarah rated it 5 stars last week' },
-      { id:'cs3', emoji:'🎳', name:'All Star Lanes', type:'todo', price:'$$', rating:4.4, vibe:'Fun', status:'busy', wait:'Busy tonight', hours:'Until midnight', desc:'Bowling, arcade games, billiards, and a full bar. Perfect for any size group.', tags:['Group Activity','Family Friendly','Late Night'], friends:['TK','AJ'], friendText:"Tina's group is here right now!" },
-      { id:'cs4', emoji:'🌮', name:"Torchy's Tacos", type:'restaurant', price:'$$', rating:4.6, vibe:'Lively', status:'open', wait:'20 min wait', hours:'Until 11pm', desc:'Bold tacos, dam good queso, strong margaritas. The patio scene is electric on weekends.', tags:['Trending','Patio','Margaritas'], friends:['MB'], friendText:'Maria posted a photo here tonight' },
-      { id:'cs5', emoji:'🎭', name:'Arts Council of Brazos Valley', type:'todo', price:'$', rating:4.5, vibe:'Cultural', status:'open', wait:'Show at 7pm', hours:'Event tonight 7pm', desc:'Live local theater and rotating gallery exhibits. An unexpected cultural gem.', tags:['Date Night','Culture','Local Art'], friends:[], friendText:'' },
-      { id:'cs6', emoji:'🍷', name:'Messina Hof Winery', type:'restaurant', price:'$$$', rating:4.9, vibe:'Romantic', status:'open', wait:'Reservations recommended', hours:'Until 9pm', desc:'Award-winning Texas wine and gourmet cuisine. The most romantic dining in the Brazos Valley.', tags:['Date Night','Award Winning','Romantic'], friends:['SR','TK'], friendText:'2 friends visited this week' },
-      { id:'cs7', emoji:'🏋️', name:'Northgate District', type:'todo', price:'$', rating:4.3, vibe:'Lively', status:'open', wait:'Busy on weekends', hours:'Bars until 2am', desc:"Aggieland's entertainment district. Bars, live music, late-night food — all within walking distance of campus.", tags:['Nightlife','Live Music','College Scene'], friends:['AJ','TK','MB'], friendText:'3 friends are out on Northgate' },
-      { id:'cs8', emoji:'🍔', name:'Madden's Casual Grill', type:'restaurant', price:'$$', rating:4.5, vibe:'Relaxed', status:'open', wait:'15 min wait', hours:'Until 10pm', desc:'Beloved local burger spot with a full bar and great patio. A staple for Aggies and locals alike.', tags:['Burgers','Patio','Local Fave'], friends:['MB'], friendText:'Mike ate here for lunch' },
-    ],
-    'austin-tx': [
-      { id:'au1', emoji:'🎸', name:'6th Street', type:'todo', price:'$', rating:4.6, vibe:'Electric', status:'open', wait:'Busy tonight', hours:'Until 2am', desc:"Austin's legendary live music strip. Dozens of venues, every genre, every night of the week.", tags:['Live Music','Nightlife','Iconic'], friends:['JD'], friendText:'Josh is on 6th right now' },
-      { id:'au2', emoji:'🥩', name:'Franklin Barbecue', type:'restaurant', price:'$$', rating:4.9, vibe:'Legendary', status:'open', wait:'2+ hr line', hours:'Until sold out', desc:"America's most famous BBQ. Worth every minute of the wait. Get there by 9am.", tags:['World Famous','BBQ','Worth the Wait'], friends:['AL','JD'], friendText:'2 friends went last weekend' },
-      { id:'au3', emoji:'🏊', name:'Barton Springs Pool', type:'todo', price:'$', rating:4.8, vibe:'Refreshing', status:'open', wait:'Low crowds', hours:'Until 10pm', desc:'Natural spring-fed pool, 68°F year-round, in the heart of Zilker Park. Austin\'s best outdoor escape.', tags:['Outdoor','Swimming','Nature'], friends:[], friendText:'' },
-      { id:'au4', emoji:'🏨', name:'Hotel ZaZa Austin', type:'hotel', price:'$$$', rating:4.7, vibe:'Boutique', status:'open', wait:'Rooms available', hours:'Check-in 3pm', desc:"One of Austin's most stylish hotels. Rooftop pool, eclectic design, prime location on Congress Ave.", tags:['Rooftop Pool','Boutique','Congress Ave'], friends:['AL'], friendText:'Alex stayed here last month' },
-      { id:'au5', emoji:'🌮', name:'Veracruz All Natural', type:'restaurant', price:'$', rating:4.8, vibe:'Authentic', status:'open', wait:'Short wait', hours:'Until 3pm', desc:'James Beard-nominated breakfast tacos. The migas taco alone is worth the trip to Austin.', tags:['Breakfast','Tacos','James Beard'], friends:['JD','AL'], friendText:'Two friends recommend the migas taco' },
-      { id:'au6', emoji:'🎨', name:'South Congress Ave', type:'todo', price:'$', rating:4.7, vibe:'Hip', status:'open', wait:'Always buzzing', hours:'Shops until 8pm', desc:'Austin\'s coolest street. Vintage shops, galleries, iconic restaurants, and the best people-watching in Texas.', tags:['Shopping','Local Art','Iconic'], friends:['AL'], friendText:'Alex browsed shops here yesterday' },
-    ],
-    'houston-tx': [
-      { id:'ho1', emoji:'🚀', name:'Space Center Houston', type:'todo', price:'$$', rating:4.7, vibe:'Inspiring', status:'open', wait:'Moderate', hours:'Until 5pm', desc:"NASA's official visitor center. Real spacecraft, Mission Control, and astronaut training simulations.", tags:['Family Friendly','Educational','Iconic'], friends:['MR'], friendText:'Mike took his kids here yesterday' },
-      { id:'ho2', emoji:'🍜', name:'Underbelly Hospitality', type:'restaurant', price:'$$$', rating:4.8, vibe:'Elevated', status:'open', wait:'Reservations needed', hours:'Dinner until 10pm', desc:"James Beard Award-winning chef Chris Shepherd's flagship. Houston's diverse food culture distilled into extraordinary dishes.", tags:['James Beard','Date Night','American'], friends:['SL','MR'], friendText:'2 friends dined here this week' },
-      { id:'ho3', emoji:'🏨', name:'Hotel Granduca Houston', type:'hotel', price:'$$$$', rating:4.8, vibe:'Luxury', status:'open', wait:'Rooms available', hours:'Check-in 3pm', desc:'Italian-inspired luxury villa in the Galleria area. Impeccable service, stunning grounds, exceptional restaurant.', tags:['Luxury','Italian','Galleria'], friends:[], friendText:'' },
-      { id:'ho4', emoji:'🎨', name:'Museum of Fine Arts Houston', type:'todo', price:'$', rating:4.6, vibe:'Cultural', status:'open', wait:'Low wait', hours:'Until 9pm Thu', desc:'One of the largest art museums in the US. World-class rotating exhibits and exceptional permanent collection.', tags:['Culture','Art','Family Friendly'], friends:['SL'], friendText:'Sara visited last weekend' },
-      { id:'ho5', emoji:'🦞', name:'Brennan\'s of Houston', type:'restaurant', price:'$$$', rating:4.7, vibe:'Classic', status:'open', wait:'Reservations recommended', hours:'Until 10pm', desc:'New Orleans-inspired Creole cuisine in Houston since 1967. The turtle soup and bananas foster are legendary.', tags:['Classic','Creole','Date Night'], friends:['MR'], friendText:'Mike celebrated his anniversary here' },
-    ],
-    'dallas-tx': [
-      { id:'da1', emoji:'🥩', name:'Al Biernat\'s', type:'restaurant', price:'$$$$', rating:4.8, vibe:'Classic', status:'open', wait:'Reservations needed', hours:'Until 11pm', desc:"Dallas's quintessential steakhouse. Where power players and celebrities dine. Incredible dry-aged beef.", tags:['Steakhouse','Upscale','Classic'], friends:[], friendText:'' },
-      { id:'da2', emoji:'🎨', name:'Dallas Museum of Art', type:'todo', price:'$', rating:4.6, vibe:'Cultural', status:'open', wait:'Low wait', hours:'Until 9pm', desc:'One of the largest art museums in the US, with free general admission. Over 24,000 works spanning 5,000 years.', tags:['Free','Culture','Art'], friends:[], friendText:'' },
-      { id:'da3', emoji:'🏨', name:'The Adolphus Hotel', type:'hotel', price:'$$$', rating:4.7, vibe:'Historic', status:'open', wait:'Rooms available', hours:'Check-in 3pm', desc:'Dallas\'s grandest historic hotel since 1912. Baroque architecture, legendary service, and an iconic bar.', tags:['Historic','Luxury','Downtown'], friends:[], friendText:'' },
-      { id:'da4', emoji:'🍔', name:'Maple & Motor', type:'restaurant', price:'$', rating:4.7, vibe:'Local', status:'open', wait:'Low wait', hours:'Until 9pm', desc:"Dallas's best no-frills burger. Cash only, picnic tables, and absolutely massive patties. A local legend.", tags:['Burgers','Cash Only','Local Fave'], friends:[], friendText:'' },
-    ],
-    'san-antonio-tx': [
-      { id:'sa1', emoji:'🚶', name:'The River Walk', type:'todo', price:'$', rating:4.8, vibe:'Scenic', status:'open', wait:'Always open', hours:'24/7', desc:"San Antonio's beloved urban waterway. Lined with restaurants, bars, and hotels — magical at night.", tags:['Iconic','Outdoor','Nightlife'], friends:[], friendText:'' },
-      { id:'sa2', emoji:'🏰', name:'The Alamo', type:'todo', price:'$', rating:4.5, vibe:'Historic', status:'open', wait:'Low wait', hours:'Until 7pm', desc:"Texas's most iconic landmark. The site of the famous 1836 battle for independence. Free to enter.", tags:['Historic','Free','Iconic'], friends:[], friendText:'' },
-      { id:'sa3', emoji:'🌮', name:'Mi Tierra Café', type:'restaurant', price:'$$', rating:4.6, vibe:'Festive', status:'open', wait:'30 min wait', hours:'Open 24hrs', desc:'A San Antonio institution since 1941. Open 24 hours, incredible Tex-Mex, and the most festive décor you\'ve ever seen.', tags:['Open 24hrs','Tex-Mex','Institution'], friends:[], friendText:'' },
-      { id:'sa4', emoji:'🏨', name:'Hotel Emma', type:'hotel', price:'$$$$', rating:4.9, vibe:'Stunning', status:'open', wait:'Rooms available', hours:'Check-in 3pm', desc:'One of the most beautiful hotels in America, in a converted 1887 brewery. Absolutely breathtaking design.', tags:['Stunning','Historic','Pearl District'], friends:[], friendText:'' },
-    ],
-    'new-york-ny': [
-      { id:'ny1', emoji:'🍕', name:'Di Fara Pizza', type:'restaurant', price:'$$', rating:4.9, vibe:'Legendary', status:'open', wait:'1 hr wait', hours:'Until 8pm', desc:"Brooklyn's legendary pizza, hand-made by Dom DeMarco's family since 1965. Worth the subway ride and the wait.", tags:['Legendary','Brooklyn','Cash Only'], friends:[], friendText:'' },
-      { id:'ny2', emoji:'🏨', name:'The NoMad Hotel', type:'hotel', price:'$$$$', rating:4.8, vibe:'Luxe', status:'open', wait:'Rooms available', hours:'Check-in 3pm', desc:'One of NYC\'s most beautiful hotels. Stunning Flatiron location, incredible restaurant, and a legendary bar.', tags:['Flatiron','Luxe','Bar Scene'], friends:[], friendText:'' },
-      { id:'ny3', emoji:'🎭', name:'Broadway Theater District', type:'todo', price:'$$$', rating:4.9, vibe:'Electric', status:'open', wait:'Check showtimes', hours:'Evening shows', desc:"The world's greatest theater district. From long-running classics to bold new productions — there's always something unmissable.", tags:['Theater','Iconic','Date Night'], friends:[], friendText:'' },
-      { id:'ny4', emoji:'🥩', name:'Peter Luger Steak House', type:'restaurant', price:'$$$$', rating:4.8, vibe:'Classic', status:'open', wait:'Reservations weeks out', hours:'Until 10:45pm', desc:"Brooklyn's iconic cash-only steakhouse since 1887. The porterhouse is transcendent. Book weeks in advance.", tags:['Iconic','Cash Only','Steakhouse'], friends:[], friendText:'' },
-      { id:'ny5', emoji:'🌳', name:'Central Park', type:'todo', price:'$', rating:4.9, vibe:'Timeless', status:'open', wait:'Always open', hours:'6am-1am', desc:"843 acres of pure New York magic. Rent a bike, find a bench, get lost. The city's greatest backyard.", tags:['Free','Outdoor','Iconic'], friends:[], friendText:'' },
-    ],
-    'los-angeles-ca': [
-      { id:'la1', emoji:'🌮', name:'Guerrilla Tacos', type:'restaurant', price:'$', rating:4.8, vibe:'Creative', status:'open', wait:'Short wait', hours:'Until 3pm', desc:'Chef Wes Avila\'s celebrated taco concept. Unexpected ingredients, perfect technique, incredible value.', tags:['James Beard','Creative','Lunch'], friends:[], friendText:'' },
-      { id:'la2', emoji:'🏄', name:'Venice Beach Boardwalk', type:'todo', price:'$', rating:4.5, vibe:'Eccentric', status:'open', wait:'Always busy', hours:'Sunrise to sunset', desc:"LA's most colorful outdoor space. Street performers, skate park, Muscle Beach, and wall-to-wall people-watching.", tags:['Beach','Iconic','Free'], friends:[], friendText:'' },
-      { id:'la3', emoji:'🏨', name:'Chateau Marmont', type:'hotel', price:'$$$$', rating:4.7, vibe:'Legendary', status:'open', wait:'Rooms available', hours:'Check-in 3pm', desc:"Hollywood's most storied hotel since 1929. Celebrities, mystery, and a poolside bar that never disappoints.", tags:['Legendary','Hollywood','Bar Scene'], friends:[], friendText:'' },
-      { id:'la4', emoji:'🎨', name:'The Getty Center', type:'todo', price:'$', rating:4.8, vibe:'Breathtaking', status:'open', wait:'Low wait', hours:'Until 5:30pm', desc:'Free admission (just pay for parking). World-class art collection and the best views of Los Angeles from the hilltop.', tags:['Free','Art','Views'], friends:[], friendText:'' },
-    ],
-    'chicago-il': [
-      { id:'ch1', emoji:'🍕', name:'Lou Malnati\'s Pizzeria', type:'restaurant', price:'$$', rating:4.8, vibe:'Classic', status:'open', wait:'45 min wait', hours:'Until 11pm', desc:"Chicago deep dish done right since 1971. Buttery crust, chunky tomato sauce, impossible amounts of cheese.", tags:['Deep Dish','Classic','Chicago Icon'], friends:[], friendText:'' },
-      { id:'ch2', emoji:'🎨', name:'Art Institute of Chicago', type:'todo', price:'$$', rating:4.9, vibe:'World-Class', status:'open', wait:'Low wait', hours:'Until 8pm Thu', desc:'One of the greatest art museums in the world. The Impressionist collection alone justifies the trip to Chicago.', tags:['World-Class','Art','Millennium Park'], friends:[], friendText:'' },
-      { id:'ch3', emoji:'🏨', name:'The Langham Chicago', type:'hotel', price:'$$$$', rating:4.9, vibe:'Refined', status:'open', wait:'Rooms available', hours:'Check-in 3pm', desc:"Chicago's most refined luxury hotel, on the Chicago River. Extraordinary service, stunning views, and an incredible spa.", tags:['Luxury','River Views','Spa'], friends:[], friendText:'' },
-      { id:'ch4', emoji:'🍸', name:'The Aviary', type:'todo', price:'$$$$', rating:4.8, vibe:'Avant-Garde', status:'open', wait:'Reservations required', hours:'Until midnight', desc:"Grant Achatz's legendary cocktail bar. Cocktails as culinary art. One of the most unique experiences in America.", tags:['Cocktails','Avant-Garde','Grant Achatz'], friends:[], friendText:'' },
-    ],
-    'miami-fl': [
-      { id:'mi1', emoji:'🌊', name:'South Beach', type:'todo', price:'$', rating:4.7, vibe:'Electric', status:'open', wait:'Always busy', hours:'24/7', desc:"Miami's iconic Art Deco beach strip. Ocean Drive, neon lights, world-class people-watching, and warm Atlantic water.", tags:['Beach','Nightlife','Iconic'], friends:[], friendText:'' },
-      { id:'mi2', emoji:'🥩', name:'Stubborn Seed', type:'restaurant', price:'$$$', rating:4.8, vibe:'Creative', status:'open', wait:'Reservations recommended', hours:'Dinner until 11pm', desc:"James Beard Award-winning Chef Jeremy Ford's creative American cuisine. One of Miami's most exciting restaurants.", tags:['James Beard','Creative','Fine Dining'], friends:[], friendText:'' },
-      { id:'mi3', emoji:'🏨', name:'Faena Hotel Miami Beach', type:'hotel', price:'$$$$', rating:4.8, vibe:'Dramatic', status:'open', wait:'Rooms available', hours:'Check-in 3pm', desc:'The most dramatic hotel in Miami. Gold mammoth sculpture, theatrical suites, and a beach club that never sleeps.', tags:['Dramatic','Luxury','Beach Club'], friends:[], friendText:'' },
-      { id:'mi4', emoji:'🎨', name:'Wynwood Walls', type:'todo', price:'$', rating:4.7, vibe:'Creative', status:'open', wait:'Low wait', hours:'Until 11pm', desc:"The world's largest outdoor street art museum. Miami's coolest neighborhood, always evolving, always surprising.", tags:['Street Art','Free','Wynwood'], friends:[], friendText:'' },
-    ],
-    'nashville-tn': [
-      { id:'na1', emoji:'🎵', name:'Broadway Honky-Tonks', type:'todo', price:'$', rating:4.7, vibe:'Wild', status:'open', wait:'Always hopping', hours:'Until 3am', desc:"Nashville's legendary strip of live country music bars. Free entry, cold beer, and world-class musicians every night.", tags:['Live Music','Free Entry','Nightlife'], friends:[], friendText:'' },
-      { id:'na2', emoji:'🍗', name:'Hattie B\'s Hot Chicken', type:'restaurant', price:'$', rating:4.8, vibe:'Fiery', status:'open', wait:'45 min wait', hours:'Until 10pm', desc:"Nashville hot chicken at its finest. Start at 'Damn Hot' and work your way up. This is the real thing.", tags:['Hot Chicken','Worth the Wait','Local Legend'], friends:[], friendText:'' },
-      { id:'na3', emoji:'🏨', name:'The Joseph Nashville', type:'hotel', price:'$$$', rating:4.8, vibe:'Artistic', status:'open', wait:'Rooms available', hours:'Check-in 4pm', desc:"Nashville's most beautiful boutique hotel. Curated art collection, rooftop bar, and a stunning location downtown.", tags:['Boutique','Art Hotel','Rooftop'], friends:[], friendText:'' },
-      { id:'na4', emoji:'🎸', name:'Bluebird Cafe', type:'todo', price:'$$', rating:4.9, vibe:'Intimate', status:'open', wait:'Reservations fill fast', hours:'Shows nightly', desc:'Where country music legends got their start. An intimate listening room where tomorrow\'s stars perform tonight.', tags:['Live Music','Intimate','Legendary'], friends:[], friendText:'' },
-    ],
-    'denver-co': [
-      { id:'de1', emoji:'🏔', name:'Red Rocks Amphitheatre', type:'todo', price:'$$', rating:4.9, vibe:'Breathtaking', status:'open', wait:'Check schedule', hours:'Varies', desc:'The most beautiful outdoor music venue on earth. Even if there\'s no show, hike the trails for stunning views.', tags:['Music Venue','Iconic','Outdoor'], friends:[], friendText:'' },
-      { id:'de2', emoji:'🍺', name:'Great Divide Brewing', type:'todo', price:'$', rating:4.6, vibe:'Craft', status:'open', wait:'Low wait', hours:'Until 10pm', desc:"Denver's legendary craft brewery. Sample award-winning Colorado beers in a laid-back taproom.", tags:['Craft Beer','Local','Taproom'], friends:[], friendText:'' },
-      { id:'de3', emoji:'🥩', name:'Elway\'s Denver', type:'restaurant', price:'$$$', rating:4.7, vibe:'Classic', status:'open', wait:'Reservations recommended', hours:'Until 10pm', desc:"John Elway's flagship steakhouse. Exceptional Colorado beef, great cocktails, and a reliably excellent experience.", tags:['Steakhouse','Classic','Downtown'], friends:[], friendText:'' },
-      { id:'de4', emoji:'🏨', name:'The Brown Palace Hotel', type:'hotel', price:'$$$', rating:4.7, vibe:'Historic', status:'open', wait:'Rooms available', hours:'Check-in 4pm', desc:'Denver\'s most storied hotel since 1892. An atrium lobby of unmatched grandeur, right in the heart of downtown.', tags:['Historic','Luxury','Landmark'], friends:[], friendText:'' },
-    ],
-    'seattle-wa': [
-      { id:'se1', emoji:'☕', name:'Pike Place Market', type:'todo', price:'$', rating:4.8, vibe:'Lively', status:'open', wait:'Busy mornings', hours:'Until 6pm', desc:"America's oldest farmers market, overlooking Puget Sound. Fish throwing, fresh produce, the original Starbucks.", tags:['Iconic','Food','Free'], friends:[], friendText:'' },
-      { id:'se2', emoji:'🦀', name:'Canlis', type:'restaurant', price:'$$$$', rating:4.9, vibe:'Legendary', status:'open', wait:'Book weeks ahead', hours:'Dinner only', desc:"Seattle's most legendary restaurant since 1950. Stunning views of Lake Union, flawless service, unforgettable food.", tags:['Legendary','Fine Dining','Lake Views'], friends:[], friendText:'' },
-      { id:'se3', emoji:'🏨', name:'Kimpton Hotel Monaco Seattle', type:'hotel', price:'$$$', rating:4.7, vibe:'Playful', status:'open', wait:'Rooms available', hours:'Check-in 3pm', desc:'Bold, colorful boutique hotel in the heart of downtown. Complimentary wine hour, pet-friendly, and great service.', tags:['Boutique','Pet Friendly','Downtown'], friends:[], friendText:'' },
-      { id:'se4', emoji:'🎨', name:'Chihuly Garden and Glass', type:'todo', price:'$$', rating:4.8, vibe:'Magical', status:'open', wait:'Low wait', hours:'Until 8pm', desc:"Dale Chihuly's breathtaking glass sculpture garden at the base of the Space Needle. Magical at night.", tags:['Art','Unique','Space Needle'], friends:[], friendText:'' },
-    ],
-    'new-orleans-la': [
-      { id:'no1', emoji:'🎺', name:'Frenchmen Street', type:'todo', price:'$', rating:4.9, vibe:'Soulful', status:'open', wait:'Busy after 9pm', hours:'Until 4am', desc:"The locals' answer to Bourbon Street. Authentic New Orleans jazz, blues, and funk spilling out of every door.", tags:['Live Music','Jazz','Local Scene'], friends:[], friendText:'' },
-      { id:'no2', emoji:'🦞', name:'Dooky Chase\'s Restaurant', type:'restaurant', price:'$$', rating:4.8, vibe:'Historic', status:'open', wait:'No reservations', hours:'Until 3pm', desc:"New Orleans' most historic restaurant. Leah Chase fed civil rights leaders here. The fried chicken is transcendent.", tags:['Historic','Iconic','Creole'], friends:[], friendText:'' },
-      { id:'no3', emoji:'🏨', name:'Hotel Monteleone', type:'hotel', price:'$$$', rating:4.7, vibe:'Timeless', status:'open', wait:'Rooms available', hours:'Check-in 4pm', desc:'The French Quarter\'s grandest hotel since 1886. Home to the famous Carousel Bar — it literally rotates.', tags:['Historic','French Quarter','Carousel Bar'], friends:[], friendText:'' },
-      { id:'no4', emoji:'🍮', name:'Café Du Monde', type:'restaurant', price:'$', rating:4.7, vibe:'Iconic', status:'open', wait:'Always a wait', hours:'Open 24hrs', desc:'Beignets and café au lait since 1862. Powdered sugar everywhere, worth every bite. A New Orleans rite of passage.', tags:['Open 24hrs','Iconic','Beignets'], friends:[], friendText:'' },
-    ],
-    'las-vegas-nv': [
-      { id:'lv1', emoji:'🎲', name:'The Strip at Night', type:'todo', price:'$', rating:4.8, vibe:'Dazzling', status:'open', wait:'Always open', hours:'24/7', desc:'Nothing prepares you for the first time you walk the Las Vegas Strip at night. Pure sensory overload — in the best way.', tags:['Iconic','Free','Nightlife'], friends:[], friendText:'' },
-      { id:'lv2', emoji:'🥩', name:"Gordon Ramsay's Hell's Kitchen", type:'restaurant', price:'$$$', rating:4.7, vibe:'Fun', status:'open', wait:'Reservations recommended', hours:'Until midnight', desc:"The TV set recreated at Caesars Palace. Exceptional food, great cocktails, and the thrill of dining on camera.", tags:['Celebrity Chef','Fun','Caesars'], friends:[], friendText:'' },
-      { id:'lv3', emoji:'🏨', name:'The Venetian Resort', type:'hotel', price:'$$$$', rating:4.8, vibe:'Grand', status:'open', wait:'Rooms available', hours:'Check-in 3pm', desc:"Las Vegas's most impressive mega-resort. All-suite rooms, indoor canals, and the best casino floor on the Strip.", tags:['Grand','All-Suite','The Strip'], friends:[], friendText:'' },
-      { id:'lv4', emoji:'🎭', name:'Cirque du Soleil - O', type:'todo', price:'$$$$', rating:4.9, vibe:'Spectacular', status:'open', wait:'Book in advance', hours:'Evening shows', desc:"The most spectacular show in Las Vegas. An aquatic theatrical masterpiece performed in and around a 1.5 million gallon pool.", tags:['World-Class','Bellagio','Show'], friends:[], friendText:'' },
-    ],
-    'portland-or': [
-      { id:'po1', emoji:'🌹', name:'Powell\'s City of Books', type:'todo', price:'$', rating:4.9, vibe:'Beloved', status:'open', wait:'No wait', hours:'Until 9pm', desc:"The world's largest independent bookstore, occupying an entire city block. An essential Portland pilgrimage.", tags:['Bookstore','Iconic','Free to Browse'], friends:[], friendText:'' },
-      { id:'po2', emoji:'🍩', name:"Voodoo Doughnut", type:'restaurant', price:'$', rating:4.5, vibe:'Weird','status':'open', wait:'Short wait', hours:'Open 24hrs', desc:'Portland\'s most famous doughnut shop. Bacon maple bars, cereal-topped creations, and a cash-only policy. Very Portland.', tags:['Weird','Open 24hrs','Cash Only'], friends:[], friendText:'' },
-      { id:'po3', emoji:'🏨', name:'The Nines Hotel Portland', type:'hotel', price:'$$$', rating:4.7, vibe:'Stylish', status:'open', wait:'Rooms available', hours:'Check-in 3pm', desc:'Portland\'s most stylish downtown hotel, in the historic Meier & Frank building. Excellent restaurant and bar.', tags:['Stylish','Downtown','Historic Building'], friends:[], friendText:'' },
-      { id:'po4', emoji:'🌲', name:'Forest Park', type:'todo', price:'$', rating:4.9, vibe:'Serene', status:'open', wait:'No wait', hours:'Dawn to dusk', desc:"One of America's largest urban forests — 5,100 acres of old-growth trees within city limits. Portland's crown jewel.", tags:['Free','Hiking','Nature'], friends:[], friendText:'' },
-    ],
-  }
-};
-
-</script>
-<script>
-const SOCIAL=[
-  {av:'AJ',c:'#EDE7F6',tc:'#512DA8',name:'Alex J.',act:"checked in at <b>Layne's Chicken Fingers</b>",t:'2h ago',e:'🍗'},
-  {av:'SR',c:'#E4F3EB',tc:'#1B5E35',name:'Sara R.',act:'rated <b>The George Hotel</b> ★★★★★',t:'Yesterday',e:'⭐'},
-  {av:'TK',c:'#FFF0E0',tc:'#A04800',name:'Tina K.',act:'is at <b>All Star Lanes</b> right now!',t:'Just now',e:'🎳'},
-  {av:'MB',c:'#EDE7F6',tc:'#512DA8',name:'Marco B.',act:"posted a photo at <b>Torchy's Tacos</b>",t:'3h ago',e:'📸'},
-  {av:'JD',c:'#E4F3EB',tc:'#1B5E35',name:'Jade D.',act:'recommends <b>Messina Hof Winery</b> for date night',t:'2 days ago',e:'🍷'},
-  {av:'RW',c:'#FFF0E0',tc:'#A04800',name:'Ryan W.',act:'saved 3 spots in <b>Austin, TX</b>',t:'4h ago',e:'🔖'},
+var SOCIAL=[
+  {av:"AJ",c:"#EDE7F6",tc:"#512DA8",name:"Alex J.",act:"checked in at Laynes Chicken Fingers",t:"2h ago",e:"&#127831;"},
+  {av:"SR",c:"#E4F3EB",tc:"#1B5E35",name:"Sara R.",act:"rated The George Hotel 5 stars",t:"Yesterday",e:"&#11088;"},
+  {av:"TK",c:"#FFF0E0",tc:"#A04800",name:"Tina K.",act:"is at All Star Lanes right now",t:"Just now",e:"&#127923;"},
+  {av:"MB",c:"#EDE7F6",tc:"#512DA8",name:"Marco B.",act:"posted a photo at Torchys Tacos",t:"3h ago",e:"&#128247;"},
+  {av:"JD",c:"#E4F3EB",tc:"#1B5E35",name:"Jade D.",act:"recommends Messina Hof Winery for date night",t:"2 days ago",e:"&#127863;"}
 ];
-const AI_STEP2={
-  casual:{q:"How many people?",opts:["Just me","Two of us","Small group (3–5)","Big group (6+)"]},
-  upscale:{q:"What's the occasion?",opts:["Date night","Business dinner","Celebration","Just treating myself"]},
-  adventure:{q:"How adventurous?",opts:["Mildly off the beaten path","Totally unique experience","Outdoor & nature","Cultural discovery"]},
-  family:{q:"Ages in the group?",opts:["Toddlers (0–5)","Kids (6–12)","Teens","Mixed ages"]},
+
+var AI_STEP2={
+  casual:{q:"How many people?",opts:["Just me","Two of us","Small group 3 to 5","Big group 6 plus"]},
+  upscale:{q:"What is the occasion?",opts:["Date night","Business dinner","Celebration","Just treating myself"]},
+  adventure:{q:"How adventurous?",opts:["Mildly off the beaten path","Totally unique experience","Outdoor and nature","Cultural discovery"]},
+  family:{q:"Ages in the group?",opts:["Toddlers 0 to 5","Kids 6 to 12","Teens","Mixed ages"]}
 };
-let cityId='college-station-tx',filter='All',savedIds=new Set(),currentTab='discover',currentUser=null,aiChoice='';
-const FILTERS=['All','Restaurants','Hotels','Things To Do','Date Night','Trending','Open Now'];
-function D(){return window.LOCALE_DATA||{cities:[],places:{}};}
-function places(){return D().places[cityId]||[];}
-function cityInfo(){return D().cities.find(c=>c.id===cityId)||{label:'Your City',emoji:'📍'};}
-function heroBg(t){return{restaurant:'#FFF0E0',hotel:'#EDE7F6',todo:'#E4F3EB'}[t]||'#F3F1EC';}
-function typeLabel(t){return{restaurant:'Restaurant',hotel:'Hotel',todo:'To Do'}[t]||t;}
-function typeBadge(t){return{restaurant:'tb-r',hotel:'tb-h',todo:'tb-t'}[t]||'tb-r';}
+
+var cityId="college-station-tx",filter="All",savedIds=new Set(),currentTab="discover",currentUser=null,aiChoice="";
+var FILTERS=["All","Restaurants","Hotels","Things To Do","Date Night","Trending","Open Now"];
+
+function places(){return LOCALE_DATA.places[cityId]||[];}
+function cityInfo(){return LOCALE_DATA.cities.find(function(c){return c.id===cityId;})||{label:"Your City",emoji:"&#128205;"};}
+function heroBg(t){return {restaurant:"#FFF0E0",hotel:"#EDE7F6",todo:"#E4F3EB"}[t]||"#F3F1EC";}
+function typeLabel(t){return {restaurant:"Restaurant",hotel:"Hotel",todo:"To Do"}[t]||t;}
+function typeBadge(t){return {restaurant:"tb-r",hotel:"tb-h",todo:"tb-t"}[t]||"tb-r";}
+
 function openCityModal(){
-  document.getElementById('city-grid').innerHTML=D().cities.map(c=>
-    `<div class="city-item${c.id===cityId?' active':''}" onclick="setCity('${c.id}')"><span class="city-e">${c.emoji}</span><span class="city-n">${c.label}</span></div>`).join('');
-  document.getElementById('city-overlay').classList.add('open');
+  var g=document.getElementById("city-grid");
+  g.innerHTML=LOCALE_DATA.cities.map(function(c){
+    return "<div class=\"city-item"+(c.id===cityId?" active":"")+"\" onclick=\"setCity('"+c.id+"')\">"+"<span class=\"city-e\">"+c.emoji+"</span>"+"<span class=\"city-n\">"+c.label+"</span></div>";
+  }).join("");
+  document.getElementById("city-overlay").classList.add("open");
 }
-document.getElementById('city-overlay').addEventListener('click',function(e){if(e.target===this)this.classList.remove('open');});
+document.getElementById("city-overlay").addEventListener("click",function(e){if(e.target===this)this.classList.remove("open");});
+
 function setCity(id){
-  cityId=id;const c=cityInfo();
-  document.getElementById('city-label').textContent=c.label.split(',')[0];
-  document.getElementById('city-pin').textContent=c.emoji;
-  document.getElementById('topbar-sub').textContent='Discovering the best of '+c.label;
-  document.getElementById('city-overlay').classList.remove('open');
-  filter='All';renderDiscover();resetAI();
+  cityId=id;
+  var c=cityInfo();
+  document.getElementById("city-label").textContent=c.label.split(",")[0];
+  document.getElementById("city-pin").innerHTML=c.emoji;
+  document.getElementById("topbar-sub").textContent="Discovering the best of "+c.label;
+  document.getElementById("city-overlay").classList.remove("open");
+  filter="All";renderDiscover();resetAI();
 }
+
 function switchTab(tab){
   currentTab=tab;
-  document.querySelectorAll('.pane').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
-  document.getElementById('pane-'+tab).classList.add('active');
-  document.getElementById('tab-'+tab).classList.add('active');
-  document.getElementById('nav-'+tab).classList.add('active');
-  if(tab==='social')renderSocial();
-  if(tab==='saved')renderSaved();
+  document.querySelectorAll(".pane").forEach(function(p){p.classList.remove("active");});
+  document.querySelectorAll(".tab").forEach(function(t){t.classList.remove("active");});
+  document.querySelectorAll(".nav-btn").forEach(function(b){b.classList.remove("active");});
+  document.getElementById("pane-"+tab).classList.add("active");
+  document.getElementById("tab-"+tab).classList.add("active");
+  document.getElementById("nav-"+tab).classList.add("active");
+  if(tab==="social")renderSocial();
+  if(tab==="saved")renderSaved();
 }
+
 function renderFilters(){
-  document.getElementById('filter-row').innerHTML=FILTERS.map(f=>
-    `<button class="chip${f===filter?' active':''}" onclick="setFilter('${f}')">${f}</button>`).join('');
+  document.getElementById("filter-row").innerHTML=FILTERS.map(function(f){
+    return "<button class=\"chip"+(f===filter?" active":"")+"\" onclick=\"setFilter('"+f+"')\">"+ f +"</button>";
+  }).join("");
 }
+
 function setFilter(f){filter=f;renderDiscover();}
+
 function filterPlaces(){
-  const ps=places();
-  if(filter==='All')return ps;
-  if(filter==='Restaurants')return ps.filter(p=>p.type==='restaurant');
-  if(filter==='Hotels')return ps.filter(p=>p.type==='hotel');
-  if(filter==='Things To Do')return ps.filter(p=>p.type==='todo');
-  if(filter==='Date Night')return ps.filter(p=>p.tags.includes('Date Night')||p.vibe==='Romantic');
-  if(filter==='Trending')return ps.filter(p=>p.tags.includes('Trending')||p.rating>=4.8);
-  if(filter==='Open Now')return ps.filter(p=>p.status==='open');
+  var ps=places();
+  if(filter==="All")return ps;
+  if(filter==="Restaurants")return ps.filter(function(p){return p.type==="restaurant";});
+  if(filter==="Hotels")return ps.filter(function(p){return p.type==="hotel";});
+  if(filter==="Things To Do")return ps.filter(function(p){return p.type==="todo";});
+  if(filter==="Date Night")return ps.filter(function(p){return p.tags.indexOf("Date Night")>=0||p.vibe==="Romantic";});
+  if(filter==="Trending")return ps.filter(function(p){return p.tags.indexOf("Trending")>=0||p.rating>=4.8;});
+  if(filter==="Open Now")return ps.filter(function(p){return p.status==="open";});
   return ps;
 }
+
 function placeCard(p){
-  const saved=savedIds.has(p.id);
-  const ac=[['#EDE7F6','#512DA8'],['#E4F3EB','#1B5E35'],['#FFF0E0','#A04800']];
-  return`<div class="card" id="card-${p.id}">
-    <div class="card-hero" style="background:${heroBg(p.type)}">${p.emoji}
-      <div class="type-badge ${typeBadge(p.type)}">${typeLabel(p.type)}</div>
-      <div class="rating-pill">★ ${p.rating}</div>
-    </div>
-    <div class="card-body">
-      <div class="card-name">${p.name}</div>
-      <div class="card-meta"><span class="dot ${p.status==='open'?'dot-open':'dot-busy'}"></span>${p.status==='open'?'Open':'Busy'} · ${p.wait} · ${p.hours}</div>
-      <div class="card-desc">${p.desc}</div>
-      <div class="tags"><span class="tag tag-vibe">${p.vibe}</span>${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}<span class="tag">${p.price}</span></div>
-      <div class="card-footer">
-        <button class="btn-save${saved?' saved':''}" id="sb-${p.id}" onclick="toggleSave('${p.id}')">${saved?'🔖 Saved':'+ Save'}</button>
-        <button class="btn-more" onclick="viewMore('${p.id}')">Details ↗</button>
-      </div>
-    </div>
-    ${p.friends&&p.friends.length?`<div class="social-strip"><div class="avs">${p.friends.slice(0,3).map((f,i)=>`<div class="av" style="background:${ac[i%3][0]};color:${ac[i%3][1]}">${f}</div>`).join('')}</div><div class="stext">${p.friendText}</div></div>`:''}
-  </div>`;
+  var saved=savedIds.has(p.id);
+  var ac=[["#EDE7F6","#512DA8"],["#E4F3EB","#1B5E35"],["#FFF0E0","#A04800"]];
+  var friends="";
+  if(p.friends&&p.friends.length>0){
+    var avhtml=p.friends.slice(0,3).map(function(f,i){return "<div class=\"av\" style=\"background:"+ac[i%3][0]+";color:"+ac[i%3][1]+"\">"+f+"</div>";}).join("");
+    friends="<div class=\"social-strip\"><div class=\"avs\">"+avhtml+"</div><div class=\"stext\">"+p.friendText+"</div></div>";
+  }
+  return "<div class=\"card\" id=\"card-"+p.id+"\">"
+    +"<div class=\"card-hero\" style=\"background:"+heroBg(p.type)+"\">"+p.emoji
+    +"<div class=\"type-badge "+typeBadge(p.type)+"\">"+typeLabel(p.type)+"</div>"
+    +"<div class=\"rating-pill\">&#9733; "+p.rating+"</div></div>"
+    +"<div class=\"card-body\">"
+    +"<div class=\"card-name\">"+p.name+"</div>"
+    +"<div class=\"card-meta\"><span class=\"dot "+(p.status==="open"?"dot-open":"dot-busy")+"\">"
+    +"</span>"+(p.status==="open"?"Open":"Busy")+" &middot; "+p.wait+" &middot; "+p.hours+"</div>"
+    +"<div class=\"card-desc\">"+p.desc+"</div>"
+    +"<div class=\"tags\"><span class=\"tag tag-vibe\">"+p.vibe+"</span>"
+    +p.tags.map(function(t){return "<span class=\"tag\">"+t+"</span>";}).join("")
+    +"<span class=\"tag\">"+p.price+"</span></div>"
+    +"<div class=\"card-footer\">"
+    +"<button class=\"btn-save"+(saved?" saved":"")+"\" id=\"sb-"+p.id+"\" onclick=\"toggleSave('"+p.id+"')\">"+(saved?"&#128278; Saved":"+ Save")+"</button>"
+    +"<button class=\"btn-more\" onclick=\"viewMore('"+p.id+"')\"">Details &#8599;</button>"
+    +"</div></div>"+friends+"</div>";
 }
+
 function renderDiscover(){
   renderFilters();
-  const fp=filterPlaces();
-  document.getElementById('card-feed').innerHTML=fp.length?fp.map(placeCard).join(''):'<div class="empty"><div class="empty-ico">🔍</div><div class="empty-t">No spots found</div><div class="empty-s">Try a different filter or city</div></div>';
+  var fp=filterPlaces();
+  document.getElementById("card-feed").innerHTML=fp.length?fp.map(placeCard).join(""):"<div class=\"empty\"><div class=\"empty-ico\">&#128269;</div><div class=\"empty-t\">No spots found</div><div class=\"empty-s\">Try a different filter or city</div></div>";
 }
+
 function toggleSave(id){
   if(savedIds.has(id))savedIds.delete(id);else savedIds.add(id);
-  const btn=document.getElementById('sb-'+id);
-  if(btn){btn.textContent=savedIds.has(id)?'🔖 Saved':'+ Save';btn.classList.toggle('saved',savedIds.has(id));}
-  const badge=document.getElementById('saved-badge');
-  badge.textContent=savedIds.size;badge.style.display=savedIds.size?'block':'none';
-  try{localStorage.setItem('locale_saved',JSON.stringify([...savedIds]));}catch(e){}
-  if(currentTab==='saved')renderSaved();
+  var btn=document.getElementById("sb-"+id);
+  if(btn){btn.innerHTML=savedIds.has(id)?"&#128278; Saved":"+ Save";btn.classList.toggle("saved",savedIds.has(id));}
+  var badge=document.getElementById("saved-badge");
+  badge.textContent=savedIds.size;badge.style.display=savedIds.size?"block":"none";
+  try{localStorage.setItem("locale_saved",JSON.stringify(Array.from(savedIds)));}catch(e){}
+  if(currentTab==="saved")renderSaved();
 }
+
 function renderSaved(){
-  const allP=Object.values(D().places||{}).flat();
-  const items=allP.filter(p=>savedIds.has(p.id));
-  document.getElementById('saved-inner').innerHTML=items.length?items.map(placeCard).join(''):'<div class="empty"><div class="empty-ico">🔖</div><div class="empty-t">Nothing saved yet</div><div class="empty-s">Tap + Save on any spot</div></div>';
+  var allP=[];
+  Object.keys(LOCALE_DATA.places).forEach(function(k){allP=allP.concat(LOCALE_DATA.places[k]);});
+  var items=allP.filter(function(p){return savedIds.has(p.id);});
+  document.getElementById("saved-inner").innerHTML=items.length?items.map(placeCard).join(""):"<div class=\"empty\"><div class=\"empty-ico\">&#128278;</div><div class=\"empty-t\">Nothing saved yet</div><div class=\"empty-s\">Tap Save on any spot</div></div>";
 }
+
 function renderSocial(){
-  document.getElementById('social-inner').innerHTML=SOCIAL.map(s=>`<div class="soc-card" style="margin-bottom:10px"><div class="soc-av" style="background:${s.c};color:${s.tc}">${s.av}</div><div class="soc-info"><div class="soc-name">${s.name}</div><div class="soc-act">${s.e} ${s.act}</div><div class="soc-time">${s.t}</div></div></div>`).join('');
+  document.getElementById("social-inner").innerHTML=SOCIAL.map(function(s){
+    return "<div class=\"soc-card\" style=\"margin-bottom:10px\">"
+      +"<div class=\"soc-av\" style=\"background:"+s.c+";color:"+s.tc+"\">"+s.av+"</div>"
+      +"<div class=\"soc-info\"><div class=\"soc-name\">"+s.name+"</div>"
+      +"<div class=\"soc-act\">"+s.e+" "+s.act+"</div>"
+      +"<div class=\"soc-time\">"+s.t+"</div></div></div>";
+  }).join("");
 }
+
 function aiFlow(choice){
-  aiChoice=choice;const step=AI_STEP2[choice];
-  document.getElementById('ai-q').textContent=step.q;
-  document.getElementById('ai-opts').innerHTML=step.opts.map(o=>`<button class="ai-opt" onclick="aiStep2('${o.replace(/'/g,"&#39;")}')">${o}</button>`).join('');
+  aiChoice=choice;var step=AI_STEP2[choice];
+  document.getElementById("ai-q").textContent=step.q;
+  document.getElementById("ai-opts").innerHTML=step.opts.map(function(o){
+    return "<button class=\"ai-opt\" onclick=\"aiStep2('"+o+"')\"">"+o+"</button>";
+  }).join("");
 }
+
 function aiStep2(opt){
-  document.getElementById('ai-opts').innerHTML='';
-  document.getElementById('ai-q').textContent='Finding your perfect picks...';
-  document.getElementById('ai-loading').style.display='flex';
-  document.getElementById('ai-result').style.display='none';
-  document.getElementById('ask-row').style.display='none';
-  document.getElementById('ai-cards').innerHTML='';
-  const ps=places();const city=cityInfo().label;
-  const list=ps.map(p=>`- ${p.name} (${typeLabel(p.type)}, ${p.vibe} vibe, ${p.price}, ★${p.rating}, ${p.status==='open'?'open now':'currently busy'})`).join('\n');
-  const prompt=`User wants a ${aiChoice} outing — specifically: "${opt}". City: ${city}.\n\nAvailable places:\n${list}\n\nGive a warm 2-3 sentence recommendation naming 1-2 specific places. Then on a new line: PICKS: [comma-separated place names from the list above]`;
-  callAI(prompt,city,(text,err)=>{
-    document.getElementById('ai-loading').style.display='none';
-    if(err){document.getElementById('ai-result').innerHTML=`<div class="ai-resp ai-error">⚠️ ${err}</div><button class="ai-reset" onclick="resetAI()">← Try again</button>`;}
-    else{
-      const m=text.match(/PICKS:\s*(.+)/i);
-      const resp=text.replace(/PICKS:.*/is,'').trim();
-      const names=m?m[1].split(',').map(s=>s.trim().toLowerCase()):[];
-      const picks=ps.filter(p=>names.some(n=>p.name.toLowerCase().includes(n)||n.includes(p.name.toLowerCase().split(' ')[0])));
-      const final=picks.length?picks:ps.slice(0,2);
-      let html=resp;
-      final.forEach(p=>{html=html.replace(new RegExp(p.name.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'gi'),`<span class="hl">${p.name}</span>`);});
-      document.getElementById('ai-result').innerHTML=`<div class="ai-resp">${html}</div><button class="ai-reset" onclick="resetAI()">← Try a different vibe</button>`;
-      document.getElementById('ai-cards').innerHTML=final.map(placeCard).join('');
+  document.getElementById("ai-opts").innerHTML="";
+  document.getElementById("ai-q").textContent="Finding your perfect picks...";
+  document.getElementById("ai-loading").style.display="flex";
+  document.getElementById("ai-result").style.display="none";
+  document.getElementById("ask-row").style.display="none";
+  document.getElementById("ai-cards").innerHTML="";
+  var ps=places();var city=cityInfo().label;
+  var list=ps.map(function(p){return "- "+p.name+" ("+typeLabel(p.type)+", "+p.vibe+" vibe, "+p.price+", "+p.rating+" stars, "+(p.status==="open"?"open now":"busy")+")"}).join("\n");
+  var prompt="User wants a "+aiChoice+" outing, specifically: "+opt+". City: "+city+".\n\nAvailable places:\n"+list+"\n\nGive a warm 2-3 sentence recommendation naming 1-2 specific places. Then on a new line write: PICKS: followed by comma-separated place names.";
+  callAI(prompt,city,function(text,err){
+    document.getElementById("ai-loading").style.display="none";
+    if(err){
+      document.getElementById("ai-result").innerHTML="<div class=\"ai-resp ai-error\">&#9888; "+err+"</div><button class=\"ai-reset\" onclick=\"resetAI()\">Back</button>";
+    }else{
+      var m=text.match(/PICKS:\s*(.+)/i);
+      var resp=text.replace(/PICKS:.*/is,"").trim();
+      var names=m?m[1].split(",").map(function(s){return s.trim().toLowerCase();}):[];
+      var picks=ps.filter(function(p){return names.some(function(n){return p.name.toLowerCase().indexOf(n)>=0||n.indexOf(p.name.toLowerCase().split(" ")[0])>=0;});});
+      var final=picks.length?picks:ps.slice(0,2);
+      document.getElementById("ai-result").innerHTML="<div class=\"ai-resp\">"+resp+"</div><button class=\"ai-reset\" onclick=\"resetAI()\">Try a different vibe</button>";
+      document.getElementById("ai-cards").innerHTML=final.map(placeCard).join("");
     }
-    document.getElementById('ai-result').style.display='block';
-    document.getElementById('ask-row').style.display='flex';
+    document.getElementById("ai-result").style.display="block";
+    document.getElementById("ask-row").style.display="flex";
   });
 }
+
 function resetAI(){
-  aiChoice='';
-  document.getElementById('ai-q').textContent="What's the vibe tonight?";
-  document.getElementById('ai-opts').innerHTML=`<button class="ai-opt" onclick="aiFlow('casual')">Something casual &amp; laid-back</button><button class="ai-opt" onclick="aiFlow('upscale')">Upscale — I want to impress</button><button class="ai-opt" onclick="aiFlow('adventure')">Something unique &amp; adventurous</button><button class="ai-opt" onclick="aiFlow('family')">Family-friendly fun</button>`;
-  document.getElementById('ai-loading').style.display='none';
-  document.getElementById('ai-result').style.display='none';
-  document.getElementById('ask-row').style.display='none';
-  document.getElementById('ai-cards').innerHTML='';
+  aiChoice="";
+  document.getElementById("ai-q").textContent="What is the vibe tonight?";
+  document.getElementById("ai-opts").innerHTML="<button class=\"ai-opt\" onclick=\"aiFlow('casual')\">Something casual and laid-back</button><button class=\"ai-opt\" onclick=\"aiFlow('upscale')\">Upscale - I want to impress</button><button class=\"ai-opt\" onclick=\"aiFlow('adventure')\">Something unique and adventurous</button><button class=\"ai-opt\" onclick=\"aiFlow('family')\">Family-friendly fun</button>";
+  document.getElementById("ai-loading").style.display="none";
+  document.getElementById("ai-result").style.display="none";
+  document.getElementById("ask-row").style.display="none";
+  document.getElementById("ai-cards").innerHTML="";
 }
+
 function sendAsk(){
-  const inp=document.getElementById('ask-inp');const v=inp.value.trim();if(!v)return;
-  inp.value='';document.getElementById('ask-btn').disabled=true;
-  document.getElementById('ai-loading').style.display='flex';
-  const ps=places();const city=cityInfo().label;
-  const list=ps.map(p=>`- ${p.name} (${typeLabel(p.type)}, ${p.vibe}, ${p.price}, ★${p.rating})`).join('\n');
-  const prompt=`User asks: "${v}". City: ${city}.\n\nAvailable places:\n${list}\n\nAnswer in 2-3 sentences referencing specific places. Then: PICKS: [names]`;
-  callAI(prompt,city,(text,err)=>{
-    document.getElementById('ai-loading').style.display='none';document.getElementById('ask-btn').disabled=false;
-    if(err){document.getElementById('ai-result').innerHTML=`<div class="ai-resp ai-error">⚠️ ${err}</div>`;}
+  var inp=document.getElementById("ask-inp");var v=inp.value.trim();if(!v)return;
+  inp.value="";document.getElementById("ask-btn").disabled=true;
+  document.getElementById("ai-loading").style.display="flex";
+  var ps=places();var city=cityInfo().label;
+  var list=ps.map(function(p){return "- "+p.name+" ("+typeLabel(p.type)+", "+p.vibe+", "+p.price+", "+p.rating+" stars)";}).join("\n");
+  var prompt="User asks: "+v+". City: "+city+".\n\nAvailable places:\n"+list+"\n\nAnswer in 2-3 sentences referencing specific places. Then: PICKS: names";
+  callAI(prompt,city,function(text,err){
+    document.getElementById("ai-loading").style.display="none";
+    document.getElementById("ask-btn").disabled=false;
+    if(err){document.getElementById("ai-result").innerHTML="<div class=\"ai-resp ai-error\">&#9888; "+err+"</div>";}
     else{
-      const m=text.match(/PICKS:\s*(.+)/i);const resp=text.replace(/PICKS:.*/is,'').trim();
-      const names=m?m[1].split(',').map(s=>s.trim().toLowerCase()):[];
-      const picks=ps.filter(p=>names.some(n=>p.name.toLowerCase().includes(n)||n.includes(p.name.toLowerCase().split(' ')[0])));
-      let html=resp;
-      picks.forEach(p=>{html=html.replace(new RegExp(p.name.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'gi'),`<span class="hl">${p.name}</span>`);});
-      document.getElementById('ai-result').innerHTML=`<div class="ai-resp">${html}</div><button class="ai-reset" onclick="resetAI()">← Start over</button>`;
-      if(picks.length)document.getElementById('ai-cards').innerHTML=picks.map(placeCard).join('');
+      var m=text.match(/PICKS:\s*(.+)/i);var resp=text.replace(/PICKS:.*/is,"").trim();
+      var names=m?m[1].split(",").map(function(s){return s.trim().toLowerCase();}):[];
+      var picks=ps.filter(function(p){return names.some(function(n){return p.name.toLowerCase().indexOf(n)>=0;});});
+      document.getElementById("ai-result").innerHTML="<div class=\"ai-resp\">"+resp+"</div><button class=\"ai-reset\" onclick=\"resetAI()\">Start over</button>";
+      if(picks.length)document.getElementById("ai-cards").innerHTML=picks.map(placeCard).join("");
     }
-    document.getElementById('ai-result').style.display='block';
+    document.getElementById("ai-result").style.display="block";
   });
 }
+
 function viewMore(id){
-  const allP=Object.values(D().places||{}).flat();
-  const p=allP.find(x=>x.id===id);if(!p)return;
-  switchTab('ai');
-  document.getElementById('ai-opts').innerHTML='';
-  document.getElementById('ai-q').textContent='Getting the scoop on '+p.name+'...';
-  document.getElementById('ai-loading').style.display='flex';
-  document.getElementById('ai-result').style.display='none';
-  document.getElementById('ask-row').style.display='none';
-  document.getElementById('ai-cards').innerHTML='';
-  const city=cityInfo().label;
-  const prompt=`Tell me about ${p.name} in ${city} in 3-4 sentences. What makes it special, best time to go, what to order or do, and one insider tip. Be conversational. Then: PICKS: ${p.name}`;
-  callAI(prompt,city,(text,err)=>{
-    document.getElementById('ai-loading').style.display='none';
-    if(err){document.getElementById('ai-result').innerHTML=`<div class="ai-resp ai-error">⚠️ ${err}</div>`;}
+  var allP=[];
+  Object.keys(LOCALE_DATA.places).forEach(function(k){allP=allP.concat(LOCALE_DATA.places[k]);});
+  var p=allP.find(function(x){return x.id===id;});if(!p)return;
+  switchTab("ai");
+  document.getElementById("ai-opts").innerHTML="";
+  document.getElementById("ai-q").textContent="Getting the scoop on "+p.name+"...";
+  document.getElementById("ai-loading").style.display="flex";
+  document.getElementById("ai-result").style.display="none";
+  document.getElementById("ask-row").style.display="none";
+  document.getElementById("ai-cards").innerHTML="";
+  var city=cityInfo().label;
+  var prompt="Tell me about "+p.name+" in "+city+" in 3-4 sentences. What makes it special, best time to go, what to order or do, and one insider tip. Be conversational. Then: PICKS: "+p.name;
+  callAI(prompt,city,function(text,err){
+    document.getElementById("ai-loading").style.display="none";
+    if(err){document.getElementById("ai-result").innerHTML="<div class=\"ai-resp ai-error\">&#9888; "+err+"</div>";}
     else{
-      const resp=text.replace(/PICKS:.*/is,'').trim();
-      let html=resp.replace(new RegExp(p.name.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'gi'),`<span class="hl">${p.name}</span>`);
-      document.getElementById('ai-q').textContent=p.name;
-      document.getElementById('ai-result').innerHTML=`<div class="ai-resp">${html}</div><button class="ai-reset" onclick="resetAI()">← Back to AI picks</button>`;
-      document.getElementById('ai-cards').innerHTML=placeCard(p);
+      var resp=text.replace(/PICKS:.*/is,"").trim();
+      document.getElementById("ai-q").textContent=p.name;
+      document.getElementById("ai-result").innerHTML="<div class=\"ai-resp\">"+resp+"</div><button class=\"ai-reset\" onclick=\"resetAI()\">Back to AI picks</button>";
+      document.getElementById("ai-cards").innerHTML=placeCard(p);
     }
-    document.getElementById('ai-result').style.display='block';
-    document.getElementById('ask-row').style.display='flex';
+    document.getElementById("ai-result").style.display="block";
+    document.getElementById("ask-row").style.display="flex";
   });
 }
-async function callAI(prompt,city,cb){
-  try{
-    const res=await fetch('/api/ai',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt,city})});
-    const data=await res.json();
-    if(!res.ok)throw new Error(data.error||'API error');
-    cb(data.text||'No response.',null);
-  }catch(e){cb(null,e.message.includes('fetch')?'Could not reach the server.':e.message);}
+
+function callAI(prompt,city,cb){
+  fetch("/api/ai",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({prompt:prompt,city:city})})
+  .then(function(r){return r.json().then(function(d){return {ok:r.ok,d:d};});})
+  .then(function(x){if(!x.ok)throw new Error(x.d.error||"API error");cb(x.d.text||"No response.",null);})
+  .catch(function(e){cb(null,e.message);});
 }
+
 function openAuth(){
-  if(currentUser){if(confirm('Sign out of '+currentUser.username+'?')){currentUser=null;try{localStorage.removeItem('locale_user');}catch(e){}document.getElementById('profile-btn').textContent='👤';}return;}
-  document.getElementById('auth-overlay').classList.add('open');
+  if(currentUser){
+    if(confirm("Sign out of "+currentUser.username+"?")){
+      currentUser=null;
+      try{localStorage.removeItem("locale_user");}catch(e){}
+      document.getElementById("profile-btn").innerHTML="&#128100;";
+    }
+    return;
+  }
+  document.getElementById("auth-overlay").classList.add("open");
 }
-document.getElementById('auth-overlay').addEventListener('click',function(e){if(e.target===this)this.classList.remove('open');});
+document.getElementById("auth-overlay").addEventListener("click",function(e){if(e.target===this)this.classList.remove("open");});
+
 function switchAuthTab(tab){
-  document.getElementById('atab-login').classList.toggle('active',tab==='login');
-  document.getElementById('atab-register').classList.toggle('active',tab==='register');
-  document.getElementById('auth-login-form').style.display=tab==='login'?'block':'none';
-  document.getElementById('auth-register-form').style.display=tab==='register'?'block':'none';
-  document.getElementById('auth-err').textContent='';
+  document.getElementById("atab-login").classList.toggle("active",tab==="login");
+  document.getElementById("atab-register").classList.toggle("active",tab==="register");
+  document.getElementById("auth-login-form").style.display=tab==="login"?"block":"none";
+  document.getElementById("auth-register-form").style.display=tab==="register"?"block":"none";
+  document.getElementById("auth-err").textContent="";
 }
-async function doAuth(action){
-  const u=(action==='login'?document.getElementById('login-user'):document.getElementById('reg-user')).value.trim();
-  const e=(action==='login'?document.getElementById('login-email'):document.getElementById('reg-email')).value.trim();
-  if(!u||!e){document.getElementById('auth-err').textContent='Please fill in all fields.';return;}
-  try{
-    const res=await fetch('/api/auth',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action,username:u,email:e})});
-    const data=await res.json();if(!res.ok)throw new Error(data.error);
-    currentUser=data.user;try{localStorage.setItem('locale_user',JSON.stringify(currentUser));}catch(er){}
-    document.getElementById('profile-btn').textContent=currentUser.avatar;
-    document.getElementById('topbar-sub').textContent='Welcome back, '+currentUser.username+'! 👋';
-    document.getElementById('auth-overlay').classList.remove('open');
-  }catch(er){document.getElementById('auth-err').textContent=er.message||'Something went wrong.';}
+
+function doAuth(action){
+  var u=(action==="login"?document.getElementById("login-user"):document.getElementById("reg-user")).value.trim();
+  var e=(action==="login"?document.getElementById("login-email"):document.getElementById("reg-email")).value.trim();
+  if(!u||!e){document.getElementById("auth-err").textContent="Please fill in all fields.";return;}
+  fetch("/api/auth",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({action:action,username:u,email:e})})
+  .then(function(r){return r.json().then(function(d){return {ok:r.ok,d:d};});})
+  .then(function(x){
+    if(!x.ok)throw new Error(x.d.error);
+    currentUser=x.d.user;
+    try{localStorage.setItem("locale_user",JSON.stringify(currentUser));}catch(er){}
+    document.getElementById("profile-btn").innerHTML=currentUser.avatar;
+    document.getElementById("topbar-sub").textContent="Welcome back, "+currentUser.username+"!";
+    document.getElementById("auth-overlay").classList.remove("open");
+  })
+  .catch(function(er){document.getElementById("auth-err").textContent=er.message||"Something went wrong.";});
 }
-try{const s=localStorage.getItem('locale_saved');if(s){savedIds=new Set(JSON.parse(s));if(savedIds.size){document.getElementById('saved-badge').style.display='block';document.getElementById('saved-badge').textContent=savedIds.size;}}}catch(e){}
-try{const u=localStorage.getItem('locale_user');if(u){currentUser=JSON.parse(u);document.getElementById('profile-btn').textContent=currentUser.avatar;}}catch(e){}
+
+try{var s=localStorage.getItem("locale_saved");if(s){savedIds=new Set(JSON.parse(s));if(savedIds.size){document.getElementById("saved-badge").style.display="block";document.getElementById("saved-badge").textContent=savedIds.size;}}}catch(e){}
+try{var u=localStorage.getItem("locale_user");if(u){currentUser=JSON.parse(u);document.getElementById("profile-btn").innerHTML=currentUser.avatar;}}catch(e){}
 renderDiscover();
+
 </script>
 </body>
 </html>
